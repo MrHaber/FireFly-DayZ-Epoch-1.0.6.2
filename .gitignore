@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/Ultima_Configs.sqf
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/Ultima_Admins_Init.sqf
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/Ultima_Admins_Functions_Server.sqf
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/Ultima_Admins_Functions_Clients_Admins.sqf
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/Ultima_Admins_Functions_Clients.sqf
+@DayZ_Epoch_Server/addons/dayz_server/scripts/Ultima_Admins/TheFirstNoob_AntiHack_Init.sqf
