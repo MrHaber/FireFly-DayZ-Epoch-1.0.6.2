@@ -14,7 +14,7 @@ if (isNil "sm_done") exitWith { diag_log ("Login cancelled, server is not ready.
 
 _inventory = [];
 _backpack = [];
-_survival = [0,0,0];
+_survival = [0,0,0,0];
 _model = "";
 _isInfected = 0;
 _CharacterCoins = 0;
@@ -85,6 +85,7 @@ _newPlayer = _primary select 1;
 _isNew = count _primary < 10; //_result select 1;
 _charID = _primary select 2;
 //diag_log ("LOGIN RESULT: " + str(_primary));
+
 /* PROCESS */
 _hiveVer = 0;
 
@@ -106,7 +107,7 @@ if (!_isNew) then {
 	_group = _primary select 5;
 	_playerCoins = _primary select 6;
 	_BankCoins = _primary select 7;
-	_hiveVer = _primary select 8;	
+	_hiveVer = _primary select 8;
 	if (isNil "_model") then {
 		_model = "Survivor2_DZ";
 	} else {
@@ -124,7 +125,7 @@ if (!_isNew) then {
 		if (!isNil "DefaultBackpack") then {_bcpk = DefaultBackpack;};
 	
 		//Wait for HIVE to be free
-		_key = format["CHILD:203:%1:%2:%3:",_charID,[_wpns,_mags],[_bcpk,[],[]]];
+		_key = str formatText["CHILD:203:%1:%2:%3:",_charID,[_wpns,_mags],[_bcpk,[],[]]];
 		_key call server_hiveWrite;
 	};
 };
@@ -148,13 +149,39 @@ if (_endMission) exitwith {
 	
 	//Log For GhostMode
 	diag_log format["INFO - Player:%1(UID:%2/CID%3) Status: LOGIN CANCELLED, GHOSTMODE. Time remianing: %4",_playerName,_playerID,_charID,_remaining];
-
+	
 	PVCDZ_plr_Ghost = [_remaining];
 	(owner _playerObj) publicVariableClient "PVCDZ_plr_Ghost";
 };
 
 //Sync chopped trees for JIP player
 {_x setDamage 1} count dayz_choppedTrees;
+
+if (toLower worldName == "chernarus") then {
+	//Destroy glitched map objects which can not be deleted or hidden
+	{(_x select 0) nearestObject (_x select 1) setDamage 1} count [
+		//Clipped benches in barracks hallway
+		[[4654,9595,0],145259],
+		[[4654,9595,0],145260],
+		//Clip into Land_houseV_2T2
+		[[3553,2563,0],327203], //popelnice.p3d trash can
+		[[9649,10412,0],240641], //popelnice.p3d trash can
+		[[12085,3581,0],373017], //popelnice.p3d trash can
+		[[2632,5064,0],188661], //popelnice.p3d trash can
+		[[11772,12195,0],251224], //lavicka_1.p3d bench
+		[[2581,3456,0],1019127], //lavicka_2.p3d bench
+		//Clip into zero_building Land_HouseV_3I3
+		[[2800,5202,0],187548], //popelnice.p3d trash can
+		//Clip into zero_building Land_HouseV_1L2
+		[[3656,2429,0],327885], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328107], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328108], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328109], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328110], //plot_rust_draty.p3d fence
+		//Floating stump misc_stub1.p3d
+		[[9084,8654,0],244480]
+	];
+};
 
 //Sync active group invites to JIP player
 if (count dayz_activeInvites > 0) then {
