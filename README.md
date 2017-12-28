@@ -64,3 +64,9 @@ P.S: Большая нагрузка на ЖД из-за Логов.
 * [RSG] Dtyz
 * [RSG] Dgors
 * [FMF] Sidekick
+
+--------------------------
+Licence (Лицензия):
+--------------------------
+Arma Public License Share Alike (APL-SA) - https://www.bistudio.com/community/licenses/arma-public-license-share-alike
+"Не для продажи! Полностью свободно распространяется!"
