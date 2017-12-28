@@ -8,7 +8,7 @@ _b = [ -15, -15, 30, 30 ] call psrnd_init;
 _c = [ 0, 0, 3, 360 ] call psrnd_init; 
 
 PVCDZ_plr_plantSpawner = [ _a, _b, _c, [] ];
-//diag_log [ __FILE__, _a, _b, _c ];
+//diag_log [[СЕРВЕР]: [server_plantSpawner.sqf]: __FILE__, _a, _b, _c ];
 
 "PVDZ_objgather_Delete" addPublicVariableEventHandler {
 	private [ "_pos", "_blacklist"];
@@ -16,6 +16,6 @@ PVCDZ_plr_plantSpawner = [ _a, _b, _c, [] ];
 
 	_blacklist = PVCDZ_plr_plantSpawner select 3;
 	_blacklist set [ count _blacklist, _pos ];
-	//diag_log [ __FILE__, _this, _blacklist ];
+	//diag_log [[СЕРВЕР]: [server_plantSpawner.sqf]: __FILE__, _this, _blacklist ];
 };
 
