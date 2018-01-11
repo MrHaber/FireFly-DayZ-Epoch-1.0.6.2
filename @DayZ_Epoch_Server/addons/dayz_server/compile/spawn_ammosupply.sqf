@@ -1,17 +1,12 @@
-/*
-	Spawns several random "Supply_Crate_DZE" across map.
-	Lootable by destroying and then opening with crowbar.
-	Currently outputs vehicle ammo defined in Land_ammo_supply_wreck CfgVehicles class
-*/
-
 private ["_position","_veh","_istoomany"];
-// do not make _roadList or _buildingList private in this function
+// Не используйте _roadList или _buildingList в функции private
 
 _position = _roadList call BIS_fnc_selectRandom;
 _position = _position modelToWorld [0,0,0];
 _position = [_position,5,20,5,0,2000,0] call BIS_fnc_findSafePos;
 
-if ((count _position) == 2) then {
+if ((count _position) == 2) then
+{
 	_istoomany = _position nearObjects ["All",5];
 	if ((count _istoomany) > 0) exitWith {};
 	

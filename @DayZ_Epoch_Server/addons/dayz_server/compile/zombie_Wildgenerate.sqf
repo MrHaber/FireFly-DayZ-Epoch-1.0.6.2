@@ -1,50 +1,51 @@
 private ["_position","_doLoiter","_unitTypes","_array","_agent","_type","_radius","_method","_rndx","_rndy","_counter","_amount","_wildsdone"];
-_unitTypes = _this select 0;
-_amount = _this select 1;
-//_doLoiter = true;
-_wildsdone = true;
-_counter = 0;
+_unitTypes		=	_this select 0;
+_amount			=	_this select 1;
+//_doLoiter		=	true;
+_wildsdone		=	true;
+_counter		=	0;
 
 while {_counter < _amount} do {
-	//_loot = 	"";
-	//_array = 	[];
-	_agent = 	objNull;
-	_type = _unitTypes call BIS_fnc_selectRandom;
+	//_loot		=	"";
+	//_array	=	[];
+	_agent		=	objNull;
+	_type		=	_unitTypes call BIS_fnc_selectRandom;
 
-	//Create the Group and populate it
-	//diag_log ("Spawned: " + _type);
-	//_radius = 0;
+	// Создаем группу
+	// diag_log ("Spawned: " + _type);	// Позже
+	// _radius = 0;
 	_method = "CAN_COLLIDE";
 	
 	_position = [getMarkerPos "center",1,6500,1] call fn_selectRandomLocation;
 	if ([_position] call DZE_SafeZonePosCheck) exitWith {};
-	//Create Zed
+	// Создаем зомби
 	_agent = createAgent [_type, _position, [], 1, _method];
-	//Set Random Direction
+	// Задаем угол
 	_agent setDir floor(random 360);
-	//Loiter State
-	_agent setVariable ["doLoiter",true]; //Might not be used.
-	//Zed stance
-	if (random 1 > 0.7) then {
+	// Статус действий
+	_agent setVariable ["doLoiter",true];
+	// Позиция
+	if (random 1 > 0.7) then
+	{
 		_agent setUnitPos "Middle";
 	};
-	//Set home location to loiter around
+	// Радиус бездействия обратно (слоняться)
 	_position = getPosATL _agent;
 	_agent setVariable ["homePos",_position,true];
-	//Store _agentobject
+	// Храним _agentobject
 	_agent setVariable["agentObject",_agent,true];
 	
-	//add to counter
+	// Добавим в значение
 	_counter = _counter + 1;
 	
 	//Start behavior
 	//_id = [_agent] execFSM "\z\AddOns\dayz_code\system\zombie_wildagent.fsm";
 	//_agent setVariable [ "fsmid", _id ];
 	
-	//Disable all zed systems
+	// Отключаем всю Симуляцию у зомби
 	_agent enableSimulation false;
 
-	//diag_log format ["CREATE WILD: Active: %1, Waiting: %2",_counter,(_amount - _counter)]
+	//diag_log format ["[СЕРВЕР]: [zombie_wildgenerate]: Создано (Пустынно): Активных: %1, Ожидают: %2",_counter,(_amount - _counter)]
 };
 
 _wildsdone

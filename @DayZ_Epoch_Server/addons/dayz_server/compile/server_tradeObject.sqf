@@ -1,16 +1,16 @@
 private ["_player","_playerUID","_name","_traderid","_buyorsell","_data","_result","_key","_outcome","_clientID","_price","_quantity","_container","_return","_classname","_traderCity","_currency","_message"];
 
-_player =		_this select 0;
-_traderID = 	_this select 1;
-_buyorsell = 	_this select 2;	//0 > Buy // 1 > Sell
-_classname =	_this select 3;
-_traderCity = 	_this select 4;
-_currency =		_this select 5;
-_price =		_this select 6;
+_player			=	_this select 0;
+_traderID		=	_this select 1;
+_buyorsell		=	_this select 2;	//0 > Купить // 1 > Продать
+_classname		=	_this select 3;
+_traderCity		=	_this select 4;
+_currency		=	_this select 5;
+_price			=	_this select 6;
 
 _clientID = 	owner _player;
 _playerUID = 	getPlayerUID _player;
-_name = 		if (alive _player) then {name _player} else {"Dead Player"};
+_name = 		if (alive _player) then {name _player} else {"Игрок мёртв"};
 
 if (count _this > 7) then {
 	_quantity = _this select 7;
@@ -24,28 +24,37 @@ if (count _this > 7) then {
 
 if (typeName _currency  == "STRING") then {_price = format ["%1 %2",_price,_currency];};
 
-if (_buyorsell == 0) then { // Buy
-	_message = format["Trader Menu: %1 (%2) purchased %3x %4 into %5 at %6 for %7",_name,_playerUID,_quantity,_classname,_container,_traderCity,_price];
-} else { // Sell
-	_message = format["Trader Menu: %1 (%2) sold %3x %4 from %5 at %6 for %7",_name,_playerUID,_quantity,_classname,_container,_traderCity,_price];
+if (_buyorsell == 0) then	 // Купить
+{
+	_message = format["[СЕРВЕР]: [server_tradeObject]: ТОРГОВЛЯ: %1 (%2) Купил %3x %4 в %5 на %6 за %7",_name,_playerUID,_quantity,_classname,_container,_traderCity,_price];
+}
+else	// Продать
+{
+	_message = format["[СЕРВЕР]: [server_tradeObject]: ТОРГОВЛЯ: %1 (%2) Продал %3x %4 из %5 на %6 за %7",_name,_playerUID,_quantity,_classname,_container,_traderCity,_price];
 };
 
 diag_log _message;
-if (DZE_ConfigTrader) then {
-	_outcome = "PASS";
-} else {
-	//Send request
-	_key = format["CHILD:398:%1:%2:",_traderID,_buyorsell];
 
-	_data = "HiveEXT" callExtension _key;
-	_result = call compile format ["%1",_data];
-	// diag_log ("TRADE: RES: "+ str(_result));
-	_outcome = _result select 0;
+if (DZE_ConfigTrader) then
+{
+	_outcome = "PASS";
+}
+else
+{
+	// Посылаем запрос
+	_key		=	format["CHILD:398:%1:%2:",_traderID,_buyorsell];
+	_data		=	"HiveEXT" callExtension _key;
+	_result		=	call compile format ["%1",_data];
+	// diag_log ("[БАЗА ДАННЫХ]: ТОРГОВЛЯ: Результат: "+ str(_result));
+	_outcome	=	_result select 0;
 };
 
-if (_return) then {
+if (_return) then
+{
 	dayzTradeResult = _outcome;
-	if (!isNull _player) then {
+
+	if (!isNull _player) then
+	{
 		_clientID publicVariableClient "dayzTradeResult";
 	};
 };

@@ -7,74 +7,95 @@ private ["_distanceFoot","_playerPos","_lastPos","_playerGear","_medical","_curr
 "_magazines","_characterID","_charPos","_isInVehicle","_name","_inDebug","_newPos","_count","_maxDist","_relocate","_playerUID","_statsDiff"];
 //[player,array]
 
-_character = _this select 0;
-_magazines = _this select 1;
-_characterID = _character getVariable ["characterID","0"];
-_playerUID = getPlayerUID _character;
-_charPos = getPosATL _character;
-_isInVehicle = vehicle _character != _character;
-_timeSince = 0;
-_humanity = 0;
-_name = if (alive _character) then {name _character} else {"Dead Player"};
-_inDebug = (respawn_west_original distance _charPos) < 1500;
+_character		=	_this select 0;
+_magazines		=	_this select 1;
+_characterID	=	_character getVariable ["characterID","0"];
+_playerUID		=	getPlayerUID _character;
+_charPos		=	getPosATL _character;
+_isInVehicle	=	vehicle _character != _character;
+_timeSince		=	0;
+_humanity		=	0;
+_name			=	if (alive _character) then {name _character} else {"Игрок мёртв"};
+_inDebug		=	(respawn_west_original distance _charPos) < 1500;
 
 _exitReason = switch true do {
-	case (isNil "_characterID"): {("ERROR: Cannot Sync Character " + _name + " has nil characterID")}; //Unit is null
-	case (_inDebug): {format["INFO: Cannot Sync Character %1 near respawn_west %2. This is normal when relogging or changing clothes.",_name,_charPos]};
-	case (_characterID == "0"): {("ERROR: Cannot Sync Character " + _name + " has no characterID")};
-	case (_character isKindOf "Animal"): {("ERROR: Cannot Sync Character " + _name + " is an Animal class")};
+	case (isNil "_characterID"): {("[СЕРВЕР]: [server_playerSync]: ОШИБКА: Ошибка синхронизации игрока " + _name + " имеет Ноль в characterID")}; // Юнит обнулен
+	case (_inDebug): {format["[СЕРВЕР]: [server_playerSync]: ИНФОРМАЦИЯ: Ошибка синхронизации игрока %1 рядом с respawn_west %2. Это нормально при Релоге или Переодевании скина.",_name,_charPos]};
+	case (_characterID == "0"): {("[СЕРВЕР]: [server_playerSync]: ОШИБКА: Ошибка синхронизации игрока " + _name + " не имеет characterID")};
+	case (_character isKindOf "Animal"): {("[СЕРВЕР]: [server_playerSync]: ОШИБКА: Ошибка синхронизации игрока " + _name + " имеет Класс - Животное")};
 	default {"none"};
 };
 
-if (_exitReason != "none") exitWith {
+if (_exitReason != "none") exitWith
+{
 	diag_log _exitReason;
 };
 
-//Check for player initiated updates
-_playerPos =	[];
-_playerGear =	[];
-_playerBackp =	[];
-_medical =		[];
-_distanceFoot =	0;
+// Проверка обновлений, инициированных игроком
+_playerPos		=	[];
+_playerGear		=	[];
+_playerBackp	=	[];
+_medical		=	[];
+_distanceFoot	=	0;
 
-//all getVariable immediately
-_globalCoins = _character getVariable [Z_globalVariable, -1];
-_bankCoins = _character getVariable [Z_BankVariable, -1];
-_coins = _character getVariable [Z_MoneyVariable, -1]; //should getting coins fail set the variable to an invalid value to prevent overwritting the in the DB
-_lastPos = _character getVariable ["lastPos",_charPos];
-_usec_Dead = _character getVariable ["USEC_isDead",false];
-_lastTime = _character getVariable ["lastTime",-1];
-_modelChk = 	_character getVariable ["model_CHK",""];
-_temp = round (_character getVariable ["temperature",100]);
-_lastMagazines = _character getVariable ["ServerMagArray",[[],""]];
-//Get difference between current stats and stats at last sync
-_statsDiff = [_character,_playerUID] call server_getStatsDiff;
-_humanity = _statsDiff select 0;
-_kills = _statsDiff select 1;
-_headShots = _statsDiff select 2;
-_killsH = _statsDiff select 3;
-_killsB = _statsDiff select 4;
+// Получаем все getVariable 
+_globalCoins	=	_character getVariable [Z_globalVariable, -1];
+_bankCoins		=	_character getVariable [Z_BankVariable, -1];
+_coins			=	_character getVariable [Z_MoneyVariable, -1]; // Если получение монет приведет к ошибке, то установите переменную в недопустимое значение, чтобы предотвратить перезапись в Базе Данных
+_lastPos		=	_character getVariable ["lastPos",_charPos];
+_usec_Dead		=	_character getVariable ["USEC_isDead",false];
+_lastTime		=	_character getVariable ["lastTime",-1];
+_modelChk		=	_character getVariable ["model_CHK",""];
+_temp			= 	 (_character getVariable ["temperature",100]);
+_lastMagazines	=	_character getVariable ["ServerMagArray",[[],""]];
+// Получим разницу между текущей статистикой и статистикой при последней синхронизации
+_statsDiff		=	[_character,_playerUID] call server_getStatsDiff;
+_humanity		=	_statsDiff select 0;
+_kills			=	_statsDiff select 1;
+_headShots		=	_statsDiff select 2;
+_killsH			=	_statsDiff select 3;
+_killsB			=	_statsDiff select 4;
 
 _charPosLen = count _charPos;
 
-if (!isNil "_magazines") then {
-	if (typeName _magazines == "ARRAY") then {
+if (!isNil "_magazines") then
+{
+	if (typeName _magazines == "ARRAY") then
+	{
 		_playerGear = [weapons _character,_magazines select 0,_magazines select 1];
 		_character setVariable["ServerMagArray",_magazines, false];
 	};
-} else {
-	//check Magazines everytime they aren't sent by player_forceSave
+}
+else
+{
+	// Проверяем Magazines каждый раз когда они не отправили player_forceSave
 	_magTemp = (_lastMagazines select 0);
-	if (count _magTemp > 0) then {
+	if (count _magTemp > 0) then
+	{
 		_magazines = [(magazines _character),20] call array_reduceSize;
 		{
 			_class = _x;
-			if (typeName _x == "ARRAY") then {
+			if (typeName _x == "ARRAY") then
+			{
 				_class = _x select 0;
 			};
-			if (_class in _magazines) then {
-				_MatchedCount = {_compare = if (typeName _x == "ARRAY") then {_x select 0;} else {_x}; _compare == _class} count _magTemp;
+
+			if (_class in _magazines) then
+			{
+				_MatchedCount =
+				{
+					_compare = if (typeName _x == "ARRAY") then
+					{
+						_x select 0;
+					}
+					else
+					{
+						_x
+					};
+					_compare == _class
+				} count _magTemp;
 				_CountedActual = {_x == _class} count _magazines;
+
 				if (_MatchedCount > _CountedActual) then {
 					_magTemp set [_forEachIndex, "0"];
 				};
