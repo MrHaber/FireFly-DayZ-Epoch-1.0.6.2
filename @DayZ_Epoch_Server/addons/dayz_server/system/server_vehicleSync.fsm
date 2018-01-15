@@ -96,7 +96,7 @@ class FSM
                 {
                         name = "prepare";
                         itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/"diag_log (""CLEANUP: INITIALIZING Vehicle SCRIPT"");" \n
+                        init = /*%FSM<STATEINIT""">*/"diag_log (""[СЕРВЕР]: [server_VehicleSync.fsm]: ЧИСТКА: ИНИЦИАЛИЗАЦИЯ Vehicle SCRIPT"");" \n
                          "" \n
                          "" \n
                          "_lastVehicleUpdate = diag_tickTime;" \n
@@ -127,7 +127,7 @@ class FSM
                         name = "update_objects";
                         itemno = 8;
                         init = /*%FSM<STATEINIT""">*/"if (object_debug) then {" \n
-                         "	diag_log format[""INFO: needUpdate_objects=%1"",needUpdate_objects];" \n
+                         "	diag_log format[""[СЕРВЕР]: [server_VehicleSync.fsm]: ИНФОРМАЦИЯ: needUpdate_objects=%1"",needUpdate_objects];" \n
                          "};" \n
                          "" \n
                          "{" \n
@@ -157,7 +157,7 @@ class FSM
                 {
                         name = "update_objects_1";
                         itemno = 11;
-                        init = /*%FSM<STATEINIT""">*/"diag_log format[""INFO: needUpdate_FenceObjects=%1"",needUpdate_FenceObjects];" \n
+                        init = /*%FSM<STATEINIT""">*/"diag_log format[""[СЕРВЕР]: [server_VehicleSync.fsm]: ИНФОРМАЦИЯ: needUpdate_FenceObjects=%1"",needUpdate_FenceObjects];" \n
                          "" \n
                          "{" \n
                          "	needUpdate_FenceObjects = needUpdate_FenceObjects - [_x];" \n

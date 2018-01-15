@@ -50,7 +50,7 @@ class FSM
           to="prepare";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!isnil ""bis_fnc_init"""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"diag_log (""WILD  SPAWN: INITIALIZING WILD SPAWN SCRIPT"");" \n
+          action=/*%FSM<ACTION""">*/"diag_log (""[СЕРВЕР]: [zombie_windagent.fsm]: WILD  SPAWN: ИНИЦИАЛИЗАЦИЯ WILD SPAWN SCRIPT"");" \n
            ""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -115,7 +115,7 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"_timeN = diag_tickTime;" \n
        "_spawnmore = false;" \n
        "_amount2Spawn =  100;" \n
-       "_totalamount=1000;" \n
+       "_totalamount = 1000;" \n
        "_unitTypes = [""Wild_Civ_newBase""];" \n
        "" \n
        "" \n
@@ -129,7 +129,7 @@ class FSM
        "	_spawnmore = true;" \n
        "};" \n
        "" \n
-       "diag_log format [""WILD SPAWN: Active: %1, Waiting: %2"",_wildZombies,_count]" \n
+       "diag_log format [""[СЕРВЕР]: [zombie_windagent.fsm]: WILD SPAWN: Активно: %1, Ожидают: %2"",_wildZombies,_count]" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links

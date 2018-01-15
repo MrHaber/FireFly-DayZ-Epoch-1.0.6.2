@@ -1,6 +1,7 @@
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 
-sched_co_deleteVehicle = {
+sched_co_deleteVehicle =
+{
 	private "_group";
 	_this removeAllMPEventHandlers "mpkilled";
 	_this removeAllMPEventHandlers "mphit";
@@ -17,15 +18,18 @@ sched_co_deleteVehicle = {
 	clearVehicleInit _this;
 	_group = group _this;
 	deleteVehicle _this;
-	if (count units _group == 0) then {
+
+	if (count units _group == 0) then
+	{
 		deleteGroup _group;
 	};
-		
+
 	_this = nil;
 };
 
 
-sched_corpses = {
+sched_corpses =
+{
 	private ["_delQtyG","_delQtyZ","_delQtyP","_addFlies","_x","_deathTime","_onoff","_delQtyAnimal","_sound","_deathPos","_cpos","_animal","_nearPlayer","_delQtyV"];
 	// EVERY 2 MINUTE
 	// DELETE UNCONTROLLED ZOMBIES --- PUT FLIES ON FRESH PLAYER CORPSES --- REMOVE OLD FLIES & CORPSES
@@ -118,7 +122,7 @@ sched_corpses = {
 				};
 			};
 		};
-		
+
 		if (_x in vehicles) then {
 			_deathTime = _x getVariable ["sched_co_deathTime", -1];
 			
@@ -126,10 +130,13 @@ sched_corpses = {
 				_deathTime = diag_tickTime;
 				_x setVariable ["sched_co_deathTime", _deathTime];
 			};
-					
+
 			// 5 minutes = how long a destroyed vehicle stays on the map
-			if (diag_tickTime - _deathTime > 5*60) then {
-				{deleteVehicle _x} forEach (_x nearObjects ["CraterLong",50]);
+			if (diag_tickTime - _deathTime > 5*60) then
+			{
+				{
+					deleteVehicle _x
+				} forEach (_x nearObjects ["CraterLong",50]);
 				_x call sched_co_deleteVehicle;
 				_delQtyV = _delQtyV + 1;
 			};
@@ -139,9 +146,12 @@ sched_corpses = {
 	_delQtyAnimal = 0;
 	{
 		_animal = _x;
-		if (local _animal) then {
+		if (local _animal) then
+		{
 			_nearPlayer = {isPlayer _x} count (_animal nearEntities ["CAManBase",150]);
-			if (_nearPlayer == 0) then {
+
+			if (_nearPlayer == 0) then
+			{
 				_animal call sched_co_deleteVehicle;
 				_delQtyAnimal = _delQtyAnimal + 1;
 			};
@@ -150,7 +160,8 @@ sched_corpses = {
 
 	_delQtyGrp=0;
 	{
-		if (count units _x==0) then {
+		if (count units _x==0) then
+		{
 			deleteGroup _x;
 			_delQtyGrp = _delQtyGrp + 1;
 		};

@@ -1,10 +1,11 @@
 _Ratio1 = 1;
 _Ratio2 = 2;
 _Ratio3 = 3;
-if (MaxVehicleLimit > 300) then {
-	_Ratio1 = round(MaxVehicleLimit * 0.0034);
-	_Ratio2 = round(MaxVehicleLimit * 0.0067);
-	_Ratio3 = round(MaxVehicleLimit * 0.01);
+if (MaxVehicleLimit > 300) then
+{
+	_Ratio1 = round(MaxVehicleLimit * 0.0034);		// 1
+	_Ratio2 = round(MaxVehicleLimit * 0.0067);		// 2
+	_Ratio3 = round(MaxVehicleLimit * 0.01);		// 3
 };
 AllowedVehiclesList = [
 	["AH6X_DZ",_Ratio3],
