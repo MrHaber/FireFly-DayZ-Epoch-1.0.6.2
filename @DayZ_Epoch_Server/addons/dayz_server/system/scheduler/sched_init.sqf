@@ -1,4 +1,3 @@
-
 _base="z\addons\dayz_server\system\scheduler\";
 
 call compile preprocessFileLineNumbers (_base+"sched_corpses.sqf");
@@ -7,7 +6,7 @@ call compile preprocessFileLineNumbers (_base+"sched_sync.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 
 [
-	// period	offset	code <-> ctx				init code ->ctx
+	// Период	Оффсет	Код <-> ctx					init код ->ctx
 	 [ 60,	 	224,	sched_corpses ],
 	 [ 300,	 	336,	sched_lootpiles_5m,         sched_lootpiles_5m_init ],
 	 [ 6,	 	340,	sched_lootpiles ],
@@ -21,9 +20,10 @@ call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 
 
 /*
-// (see ViralZeds.hpp -> zombie_agent.fsm -> zombie_findOwner.sqf), called when a zombie becomes "local" to the server after the player disconnected
-zombie_findOwner = {
-	(_this select 0) call fa_deleteVehicle;
-};
+	// (see ViralZeds.hpp -> zombie_agent.fsm -> zombie_findOwner.sqf), вызывается когда зомби становится "local" на сервере после дисконнекта
+	zombie_findOwner =
+	{
+		(_this select 0) call fa_deleteVehicle;
+	};
 */
 
