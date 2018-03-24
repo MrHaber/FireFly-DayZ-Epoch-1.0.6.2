@@ -1,6 +1,6 @@
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 
-//[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\scripts\Ultima_Admins\Ultima_Admins_Init.sqf";
+[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\init\Scripts\Ultima_Admins\Ultima_Admins_Init.sqf";
 
 waitUntil {!isNil "bis_fnc_init"};
 
@@ -27,6 +27,7 @@ dayz_serverKey = toString dayz_serverKey;
 
 server_playerLogin			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
+server_Procedures_Player_Anti_Relog			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_Procedures_Player_Anti_Relog.sqf";
 server_onPlayerDisconnect	=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_onPlayerDisconnect.sqf";
 server_updateObject			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_updateObject.sqf";
 server_playerDied			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDied.sqf";

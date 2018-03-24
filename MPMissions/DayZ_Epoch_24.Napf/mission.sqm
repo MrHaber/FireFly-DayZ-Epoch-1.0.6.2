@@ -32,8 +32,8 @@ class Mission
 	randomSeed=11171215;
 	class Intel
 	{
-		briefingName="DayZ Epoch Napf";
-		briefingDescription="Version 1.0.6.2";
+		briefingName="FireFly DayZ Epoch Napf";
+		briefingDescription="Версия сервера: 0.2.03 alpha";
 		startWeather=0;
 		forecastWeather=0;
 		year=2008;
@@ -186,7 +186,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=25;
+		items=21;
 		class Item0
 		{
 			position[]={10010,110,10448};
@@ -282,177 +282,119 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={8246,15,15490};
-			name="NeutralTraderCity";
-			text="Trader City Lenzburg";
-			type="mil_circle";
-		};
-		class Item16
-		{
-			position[]={12397,216,5068};
-			name="FriendlyTraderCity";
-			text="Trader City Schratten";
-			type="mil_circle";
-			colorName="ColorGreen";
-		};
-		class Item17
-		{
-			position[]={5150,71,4862};
-			name="HeroVendor";
-			text="Hero Vendor";
-			type="mil_dot";
-			colorName="ColorBlue";
-		};
-		class Item18
-		{
-			position[]={15128,19,16421};
-			name="UnarmedAirVehicles";
-			text="AWOLs Airfield";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item19
-		{
-			position[]={2125,13,7807};
-			name="West Wholesaler";
-			text="West Wholesaler";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item20
-		{
-			position[]={5372,5,16091};
-			name="NorthWholesaler";
-			text="North Wholesaler";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item21
-		{
-			position[]={6776,0,16955};
-			name="NorthBoatVendor";
-			text="Nordic Boats";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item22
-		{
-			position[]={10404,106,8282};
-			name="BanditVendor";
-			text="Bandit Vendor";
+			position[]={7665, 0, 11765};
+			name="Bandit";
+			text="Бандит";
 			type="mil_dot";
 			colorName="ColorRed";
 		};
-		class Item23
+		class Item16
 		{
-			position[]={16835,-2,5268};
-			name="SouthBoatVendor";
-			text="Pauls Boats";
+			position[]={15930, 0, 10400};
+			name="Hero";
+			text="Герой";
 			type="mil_dot";
-			colorName="ColorBlack";
+			colorName="ColorBlue";
 		};
-		class Item24
+		class Item17
 		{
-			position[]={15520,5,13225};
-			name="NeutralTraderCIty2";
-			text="Trader city Emmen";
-			type="mil_circle";
-			colorName="ColorBlack";
+			position[]={3160, 0, 12110};
+			name="Allies1";
+			text="ТЗ Церковь";
+			type="Defend";
+			colorName="ColorGreen";
+		};
+		class Item18
+		{
+			position[]={9670, 0, 2955};
+			name="Allies2";
+			text="ТЗ Гора";
+			type="Defend";
+			colorName="ColorGreen";
+		};
+		class Item19
+		{
+			position[]={10580, 0, 13110};
+			name="Allies3";
+			text="ТЗ Бункер";
+			type="Defend";
+			colorName="ColorGreen";
+		};
+		class Item20
+		{
+			position[]={13155, 0, 6395};
+			name="Allies4";
+			text="ТЗ Сторож";
+			type="Defend";
+			colorName="ColorGreen";
 		};
 	};
 	class Sensors
 	{
-		items=10;
+		items=6;
 #define TRGDEF a=100;b=100;activationBy="WEST";repeating=1;interruptable=1;age="UNKNOWN";class Effects{};
 		class Item0
 		{
-			position[]={8246,15,15485};
+			position[]={3160, 0, 12110};
 			TRGDEF
-			name="Lenz";
-			expCond="(player distance Lenz) < 50;";
-			expActiv="[""trader city Lenzburg"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""trader city Lenzburg"",true,""leave""] call player_traderCity;";
+			name="Cerkov";
+			expCond="(player distance Cerkov) < 200;";
+			expActiv="[""Торговая зона - Церковь"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Торговая зона - Церковь"",true,""leave""] call player_traderCity;";
 		};
 		class Item1
 		{
-			position[]={15506,6,13229};
+			position[]={9670, 0, 2955};
 			TRGDEF
-			name="Emmen";
-			expCond="(player distance Emmen) < 100;";
-			expActiv="[""trader city Emmen"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""trader city Emmen"",true,""leave""] call player_traderCity;";
+			name="Gora";
+			expCond="(player distance Gora) < 200;";
+			expActiv="[""Торговая зона - Гора"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Торговая зона - Гора"",true,""leave""] call player_traderCity;";
 		};
 		class Item2
 		{
-			position[]={12399,216,5074};
+			position[]={10580, 0, 13110};
 			TRGDEF
-			name="Schratten";
-			expCond="(player distance Schratten) < 75;";
-			expActiv="[""trader city Schratten"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""trader city Schratten"",true,""leave""] call player_traderCity;";
+			name="Bunker";
+			expCond="(player distance Bunker) < 200;";
+			expActiv="[""Торговая зона - Бункер"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Торговая зона - Бункер"",true,""leave""] call player_traderCity;";
 		};
 		class Item3
 		{
-			position[]={10398,105,8279};
+			position[]={13155, 0, 6395};
 			TRGDEF
-			name="Bandit";
-			expCond="(player distance Bandit) < 50;";
-			expActiv="[""Bandit Camp"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Bandit Camp"",true,""leave""] call player_traderCity;";
+			name="Storosh";
+			expCond="(player distance Storosh) < 200;";
+			expActiv="[""Торговая зона - Сторож"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Торговая зона - Сторож"",true,""leave""] call player_traderCity;";
 		};
 		class Item4
 		{
-			position[]={5149,71,4864};
+			position[]={7665, 0, 11765};
 			TRGDEF
-			name="Hero";
-			expCond="(player distance Hero) < 50;";
-			expActiv="[""Hero Vendor"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Hero Vendor"",true,""leave""] call player_traderCity;";
+			name="Bandit";
+			expCond="(player distance Bandit) < 100;";
+			expActiv="[""Бандит"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Бандит"",true,""leave""] call player_traderCity;";
 		};
 		class Item5
 		{
-			position[]={2122,13,7807};
+			position[]={15930, 5, 10400};
 			TRGDEF
-			name="Wholesale1";
-			expCond="(player distance Wholesale1) < 50;";
-			expActiv="[""West Wholesaler"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""West Wholesaler"",true,""leave""] call player_traderCity;";
+			name="Hero";
+			expCond="(player distance Hero) < 100;";
+			expActiv="[""Герой"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""Герой"",true,""leave""] call player_traderCity;";
 		};
 		class Item6
-		{
-			position[]={5379,4,16103};
-			TRGDEF
-			name="Wholesaler";
-			expCond="(player distance Wholesaler) < 50;";
-			expActiv="[""Wholesaler"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Wholesaler"",true,""leave""] call player_traderCity;";
-		};
-		class Item7
-		{
-			position[]={6772,0,16983};
-			TRGDEF
-			name="Boat1";
-			expCond="(player distance boat1) < 50;";
-			expActiv="[""Boat Vendor"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Boat Vendor"",true,""leave""] call player_traderCity;";
-		};
-		class Item8
-		{
-			position[]={16839,0,5264};
-			TRGDEF
-			name="Boat2";
-			expCond="(player distance boat2) < 50;";
-			expActiv="[""Boat Vendor"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Boat Vendor"",true,""leave""] call player_traderCity;";
-		};
-		class Item9
 		{
 			position[]={15128,19,16421};
 			TRGDEF
 			name="AWOL";
-			expCond="(player distance awol) < 75;";
-			expActiv="[""Aircraft Vendor"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Aircraft Vendor"",true,""leave""] call player_traderCity;";
+			expCond="(player distance awol) < 150;";
+			expActiv="[""АвиаДиллер"",true,""enter""] call player_traderCity;";
+			expDesactiv="[""АвиаДиллер"",true,""leave""] call player_traderCity;";
 		};
 	};
 };

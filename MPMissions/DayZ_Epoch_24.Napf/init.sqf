@@ -8,8 +8,8 @@ dayZ_instance = 24; //Instance ID of this server
 dayZ_serverName = ""; //Shown to all players in the bottom left of the screen (country code + server number)
 
 //Game settings
-dayz_antihack = 1; // DayZ Antihack / 1 = enabled // 0 = disabled
-dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
+dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
+dayz_REsec = 0; // DayZ RE Security / 1 = enabled // 0 = disabled
 dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_POIs = false; //Adds Point of Interest map additions (negatively impacts FPS)
@@ -61,7 +61,15 @@ DZE_GodModeBase = false; // Make player built base objects indestructible
 DZE_requireplot = 1; // Require a plot pole to build  0 = Off, 1 = On
 DZE_PlotPole = [30,45]; // Radius owned by plot pole [Regular objects,Other plotpoles]. Difference between them is the minimum buffer between bases.
 DZE_BuildingLimit = 150; // Max number of built objects allowed in DZE_PlotPole radius
-DZE_SafeZonePosArray = [[[8246,15485,0],50],[[15506,13229,0],100],[[12399,5074,0],75],[[10398,8279,0],50],[[5149,4864,0],50],[[2122,7807,0],50],[[5379,16103,0],50],[[6772,16983,0],50],[[16839,5264,0],50],[[15128,16421,0],75]]; // Format is [[[3D POS],RADIUS],[[3D POS],RADIUS]]; Stops loot and zed spawn, salvage and players being killed if their vehicle is destroyed in these zones.
+DZE_SafeZonePosArray =
+[
+	 [[7665,  11765, 0], 100]
+	,[[15930, 10400, 0], 100]
+	,[[3160,  12110, 0], 500]
+	,[[9670,  2955,  0], 500]
+	,[[10580, 13110, 0], 500]
+	,[[13155, 6395,  0], 500]
+];
 DZE_SelfTransfuse = true; // Allow players to bloodbag themselves
 DZE_selfTransfuse_Values = [12000,15,120]; // [blood amount given, infection chance %, cooldown in seconds]
 MaxDynamicDebris = 500; // Max number of random road blocks to spawn around the map
@@ -99,7 +107,7 @@ progressLoadingScreen 0.15;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
 progressLoadingScreen 0.25;
 call compile preprocessFileLineNumbers "server_traders.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\napf.sqf"; //Add trader city objects locally on every machine early
+//call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\napf.sqf"; //Add trader city objects locally on every machine early
 initialized = true;
 
 setTerrainGrid 25;
@@ -126,6 +134,7 @@ if (!isDedicated) then {
 	
 	//Enables Plant lib fixes
 	execVM "\z\addons\dayz_code\system\antihack.sqf";
+	execVM "Scripts\SafeZone.sqf";
 	
 	if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf"; };
 	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
