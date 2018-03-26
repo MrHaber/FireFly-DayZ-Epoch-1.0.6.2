@@ -1,8 +1,8 @@
 respawn = "BASE";
 respawnDelay = 0;
 respawnDialog = 0;
-onLoadMission = "DayZ Epoch Napf";
-OnLoadIntro = "Welcome to Napf";
+onLoadMission = "FireFly DayZ Epoch Napf";
+OnLoadIntro = "Версия сервера: 0.2.04 Alpha";
 OnLoadIntroTime = 0;
 OnLoadMissionTime = 0;
 disabledAI = 1;
@@ -14,7 +14,7 @@ debriefing = 0;
 
 titleParam1 = "AutoLogin:";
 valuesParam1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 31};
-defValueParam1 = 10; //auto login time limit in seconds, set value to 31 to disable auto login
+defValueParam1 = 31; //auto login time limit in seconds, set value to 31 to disable auto login
 textsParam1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, "Disabled"};
 
 loadScreen = "\z\addons\dayz_code\gui\loadingscreen.paa";
@@ -31,5 +31,7 @@ diagRadio = 1;
 diagHit = 1;
 
 #include "\z\addons\dayz_code\gui\description.hpp"
-#include "\z\addons\dayz_code\Configs\CfgLoot\CfgLoot.hpp"
+#include "Configs\CfgLoot\CfgLoot.hpp"
 #include "\z\addons\dayz_code\Configs\CfgServerTrader\CfgServerTrader.hpp"
+
+#include "HPP\Ultima_Admins_Menu.hpp"
