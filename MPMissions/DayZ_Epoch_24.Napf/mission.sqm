@@ -33,7 +33,7 @@ class Mission
 	class Intel
 	{
 		briefingName="FireFly DayZ Epoch Napf";
-		briefingDescription="Версия сервера: 0.2.04 alpha";
+		briefingDescription="Версия сервера: 0.4.02 Beta";
 		startWeather=0;
 		forecastWeather=0;
 		year=2008;

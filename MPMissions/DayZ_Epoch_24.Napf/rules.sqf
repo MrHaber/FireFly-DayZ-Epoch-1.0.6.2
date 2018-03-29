@@ -1,14 +1,14 @@
 private ["_messages","_timeout"];
 
 _messages = [
-	["DayZ Epoch", "Welcome "+(name player)],
+	["DayZ Epoch", "Добро пожаловать "+(name player)],
 	["World", worldName],
-	["Teamspeak", "some TS info"],
-	["Website/Forums", "some website info"],
+	["Teamspeak", "Суп сказал нет!"],
+	["Website/Forums", "Какой такой сайт?"],
 	["Server Rules", "Duping, glitching or using any<br />exploit will result in a<br />permanent ban."],
 	["Server Rules", "No talking in side."],
 	["Server Rules", "Hackers will be banned permanently<br />Respect others"],
-	["News", "Some random new info!<br />Random news<br />"]
+	["Версия сервера", "v0.4.02 Beta<br />За 29.03.2018<br />"]
 ];
  
 _timeout = 5;
