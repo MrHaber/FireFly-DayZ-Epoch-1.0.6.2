@@ -12,6 +12,8 @@ FireFly - Это российский сервер с упором на хард
 * www.s-platoon.ru (Код + форум)
 * www.epochmod.com (Серверные файлы + код + форум)
 * www.wogames.info (Тестеры)
+* www.armaproject.ru (Тестеры)
+* AMG Project (Предоставленный Team Speak Сервер)
 
 --------------------------
 Для корректной работы требуется:
@@ -45,8 +47,12 @@ P.S: Большая нагрузка на ЖД из-за Логов.
 --------------------------
 Тестеры:
 --------------------------
-[Wild Fire Army] (Weekly Open Games):  
-* [ANGEL] TheFirstNoob
+(Weekly Open Games, Arma Project Games, AMG Project):  
+* [RSG] First (TheFirstNoob)
+* [RSG] Opozdant
+* [RSG] Dtyz
+* [RSG] Dgors
+* [RSG] Emty
 * [WFA] Kennig
 * [WFA] Agentos
 * [WFA] Zain
@@ -60,10 +66,8 @@ P.S: Большая нагрузка на ЖД из-за Логов.
 * [LG] Gamer
 * [SF] DevastaTOR
 * [SF] REKETIR
-* [RSG] Opozdant
-* [RSG] Dtyz
-* [RSG] Dgors
 * [FMF] Sidekick
+* NoNameUltima
 
 --------------------------
 Licence (Лицензия):
