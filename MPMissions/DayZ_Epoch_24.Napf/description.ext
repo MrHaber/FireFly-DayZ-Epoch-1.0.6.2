@@ -2,7 +2,7 @@ respawn = "BASE";
 respawnDelay = 0;
 respawnDialog = 0;
 onLoadMission = "FireFly DayZ Epoch Napf";
-OnLoadIntro = "Версия сервера: 0.4.02 Beta";
+OnLoadIntro = "Версия сервера: 1.0.00 Release";
 OnLoadIntroTime = 0;
 OnLoadMissionTime = 0;
 disabledAI = 1;
@@ -30,8 +30,67 @@ aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
 
-#include "\z\addons\dayz_code\gui\description.hpp"
+
+class CfgSounds
+{
+	sounds[] =
+	{
+		Radio_Message_Sound
+	};
+
+	class Radio_Message_Sound
+	{
+		name = "Radio_Message_Sound";
+		sound[] = {Sounds\radio.ogg,0.4,1};
+		titles[] = {};
+    };
+};
+
+class RscTitles {
+	class wm_disp {
+		idd = -1;
+		onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+		fadein = 0;
+		fadeout = 0;
+		duration = 10e10;
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class wm_text2 {
+				idc = 1;
+				x = safeZoneX+0.027;//safeZoneW*0.01;
+				y = safeZoneY+safeZoneH-0.16;
+				w = 0.151*safeZoneH;
+				h = 0.057*safeZoneH;
+				shadow = 2;
+				class Attributes {
+					font = "EtelkaNarrowMediumPro";
+					color = "#24FFFFFF";
+					align = "left"; // put "center" here if you want some background
+					valign = "middle";
+					shadow = 2;
+				};
+				colorBackground[] = { 1, 0.3, 0, 0 };  // uncomment and increase 4th number to have a background
+				font = "EtelkaNarrowMediumPro";
+				size = 0.06*safeZoneH;
+				type = 13;
+				style = 0;
+				text = "";
+			};
+		};
+	};	
+};
+
+#include "HPP\Description.hpp"
+#include "HPP\ZSCdefines.hpp"
+#include "HPP\AdvancedTrading.hpp"
+#include "HPP\ZSC.hpp"
 #include "Configs\CfgLoot\CfgLoot.hpp"
-#include "\z\addons\dayz_code\Configs\CfgServerTrader\CfgServerTrader.hpp"
+#include "Configs\CfgTraders\CfgServerTrader.hpp"
+
+#include "Scripts\GUIMenu\defines.hpp"
+#include "Scripts\GUIMenu\menu.hpp"
+#include "Scripts\GUIMenu\rules.hpp"
+#include "Scripts\GUIMenu\rules2.hpp"
 
 #include "HPP\Ultima_Admins_Menu.hpp"

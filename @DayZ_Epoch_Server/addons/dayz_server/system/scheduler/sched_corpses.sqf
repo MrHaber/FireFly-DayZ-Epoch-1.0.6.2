@@ -73,8 +73,8 @@ sched_corpses =
 						};
 					};
 
-					// 40 минут = Как долго труп будет оставаться на карте
-					if (diag_tickTime - _deathTime > 40*60) then
+					// 60 минут = Как долго труп будет оставаться на карте
+					if (diag_tickTime - _deathTime > 60*60) then
 					{
 						if (_x getVariable["sched_co_fliesDeleted",false] or !dayz_enableFlies) then
 						{
@@ -162,7 +162,7 @@ sched_corpses =
 			};
 
 			// 5 минут = Как должно уничтоженная техника может оставаться на карте
-			if (diag_tickTime - _deathTime > 5*60) then
+			if (diag_tickTime - _deathTime > 230*60) then
 			{
 				{
 					deleteVehicle _x

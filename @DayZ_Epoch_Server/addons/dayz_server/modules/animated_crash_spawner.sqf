@@ -4,10 +4,10 @@ private["_exploRange","_blackList","_lootArray","_crashSelect","_ran15","_missio
 
 // Конфигурация
 #define DEBUG_MODE 		True  	// Режим Диагностики (server.rpt)?
-#define CRASH_TIMEOUT 	1200	// Время на исчезновение эвента, если игрок не нашел его (сек) 
+#define CRASH_TIMEOUT 	14400	// Время на исчезновение эвента, если игрок не нашел его (сек) 
 #define SPAWN_CHANCE 	100	 	// Шанс спавна Эвента (0-100) 
-#define GUARANTEED_LOOT	16	 	// Гарантированное количество лута
-#define RANDOM_LOOT		8		// Рандомное дополнительное количество лута
+#define GUARANTEED_LOOT	10	 	// Гарантированное количество лута
+#define RANDOM_LOOT		10		// Рандомное дополнительное количество лута
 #define SPAWN_FIRE 		True 	// Создать Дым/Огонь над ХелиКрашем?
 #define FADE_FIRE 		False	// Дым/Огонь исчезнет со временем?
 #define PREWAYPOINTS 	2		// Количество точек, который должен пройти вертолет, чтобы упасть
@@ -18,7 +18,7 @@ private["_exploRange","_blackList","_lootArray","_crashSelect","_ran15","_missio
 #define MARKER_NAME 	False	// Добавить название маркера (что упало?)
 #define LOWER_GRASS		False	// Убирать траву в зоне ХелиКраша
 _crashDamage			= 1;	// Количество Урона, который может выдержать ХелиКраш до падения. Чем меньше значение, тем меньше выдержит!
-_exploRange				= 200;	// Как далеко пролетит ХелиКраш перед падением, при поврежденном состоянии
+_exploRange				= 250;	// Как далеко пролетит ХелиКраш перед падением, при поврежденном состоянии
 
 // Параметры для поиска позиции
 #define SEARCH_CENTER getMarkerPos "crashsites"

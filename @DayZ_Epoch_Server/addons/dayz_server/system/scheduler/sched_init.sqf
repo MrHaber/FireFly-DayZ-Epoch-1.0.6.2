@@ -7,14 +7,14 @@ call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 
 [
 	// Период	Оффсет	Код <-> ctx					init код ->ctx
-	 [ 60,	 	224,	sched_corpses ],
+	 [ 120,	 	224,	sched_corpses ],
 	 [ 300,	 	336,	sched_lootpiles_5m,         sched_lootpiles_5m_init ],
-	 [ 6,	 	340,	sched_lootpiles ],
-	 [ 900,		0,		sched_sync ],
-	 [ 120,		48,		sched_safetyVehicle ]
+	 [ 60,	 	340,	sched_lootpiles ],
+	 [ 600,		0,		sched_sync ],
+	 [ 180,		48,		sched_safetyVehicle ]
 ] execFSM ("z\addons\dayz_code\system\scheduler\scheduler.fsm");
 
-//diag_log [ __FILE__, "Scheduler started"];
+diag_log [ __FILE__, "Scheduler started"];
 
 
 

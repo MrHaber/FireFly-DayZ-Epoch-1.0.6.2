@@ -1,7 +1,7 @@
 sched_sync =
 {
 	private ["_result","_outcome","_date","_hour","_minute"];
-	// Каждые 15 минут
+	// Каждые 10 минут
 	// Синхронизиуем Локальное время с DLL сервера
 
 	_result		=	"CHILD:307:" call server_hiveReadWrite;
@@ -15,7 +15,7 @@ sched_sync =
 
 	        if (dayz_ForcefullmoonNights) then
 			{
-				_date = [2012,8,2,_hour,_minute];
+				_date = [2018,3,4,_hour,_minute];
 	        };
 
 	        setDate _date;

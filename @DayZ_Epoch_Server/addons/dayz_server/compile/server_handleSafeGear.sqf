@@ -64,6 +64,11 @@ switch (_status) do {
 		_weapons		=	_obj getVariable ["WeaponCargo",[]];
 		_magazines		=	_obj getVariable ["MagazineCargo",[]];
 		_backpacks		=	_obj getVariable ["BackpackCargo",[]];
+
+		if (Z_singleCurrency) then
+		{
+			_coins = _obj getVariable [Z_MoneyVariable,0];
+		};
 		
 		// Создаем новый Открытый сейф, при этом удаляем старый Закрытый
 		// _holder = createVehicle [_unlockedClass,_pos,[],0,"CAN_COLLIDE"];
@@ -81,8 +86,14 @@ switch (_status) do {
 		{
 			_holder setVariable ["ownerPUID",_ownerID,true];
 		};
+
+		if (Z_singleCurrency) then
+		{
+			_holder setVariable [Z_MoneyVariable,_coins,true];
+		};
+
 		deleteVehicle _obj;
-		
+
 		[_weapons,_magazines,_backpacks,_holder] call fn_addCargo;
 	};
 
@@ -95,7 +106,12 @@ switch (_status) do {
 		_weapons	=	getWeaponCargo _obj;
 		_magazines	=	getMagazineCargo _obj;
 		_backpacks	=	getBackpackCargo _obj;
-		
+
+		if (Z_singleCurrency) then
+		{
+			_coins = _obj getVariable [Z_MoneyVariable,0];
+		};
+
 		// Создаем новый Закрытый сейф, при этом удаляем старый Открытый
 		// _holder = createVehicle [_lockedClass,_pos,[],0,"CAN_COLLIDE"];
 		_holder = _lockedClass createVehicle [0,0,0];
@@ -111,7 +127,13 @@ switch (_status) do {
 		if (DZE_permanentPlot) then
 		{
 			_holder setVariable ["ownerPUID",_ownerID,true];
-		};		
+		};
+
+		if (Z_singleCurrency) then
+		{
+			_holder setVariable [Z_MoneyVariable,_coins,true];
+		};
+
 		deleteVehicle _obj;
 		
 		// Локальный setVariable передается в новый Закрытый сейф для быстрого доступа к сейфу при следующем открытии
@@ -124,11 +146,21 @@ switch (_status) do {
 	// запакование safe/lockbox
 	case 2: {
 		_packedClass = getText (configFile >> "CfgVehicles" >> _type >> "packedClass");
-		if (_packedClass == "") exitWith {diag_log format["Server_HandleSafeGear Error: invalid object type: %1",_type];};
-		_weapons = getWeaponCargo _obj;
-		_magazines = getMagazineCargo _obj;
-		_backpacks = getBackpackCargo _obj;
-		
+
+		if (_packedClass == "") exitWith
+		{
+			diag_log format["[СЕРВЕР]: [server_handleSafeGear]: ОШИБКА: Неизвестный Тип Объекта: %1",_type];
+		};
+
+		_weapons	=	getWeaponCargo _obj;
+		_magazines	=	getMagazineCargo _obj;
+		_backpacks	=	getBackpackCargo _obj;
+
+		if (Z_singleCurrency) then
+		{
+			_coins = _obj getVariable [Z_MoneyVariable,0];
+		};
+
 		//_holder = createVehicle [_packedClass,_pos,[],0,"CAN_COLLIDE"];
 		_holder = _packedClass createVehicle [0,0,0];
 		deleteVehicle _obj;
@@ -136,6 +168,15 @@ switch (_status) do {
 		_holder setPosATL _pos;
 		_holder addMagazineCargoGlobal [getText(configFile >> "CfgVehicles" >> _packedClass >> "seedItem"),1];
 		[_weapons,_magazines,_backpacks,_holder] call fn_addCargo;
+		
+		if (Z_singleCurrency && {_coins > 0}) then
+		{
+			_wealth = _player getVariable [Z_MoneyVariable,0];
+			_player setVariable [Z_MoneyVariable,_wealth + _coins,true];
+			
+			RemoteMessage = ["private",[_playerUID,format ["Вы запаковали %1. В нем было: %2. Всего у вас: %3.",_type,[_coins] call BIS_fnc_numberText,CurrencyName]]];
+			publicVariable "RemoteMessage";
+		};
 		
 		// Удаляем сейф из Базы Данных
 		[_objectID,_objectUID] call server_deleteObjDirect;

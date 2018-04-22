@@ -87,11 +87,12 @@ if (_characterID != "?") then
 		// Проверка игрока "Вышел в Бою"
 		if (_inCombat) then
 		{
+			diag_log format["[Сервер]: Выход в режиме боя: %1 (%2) на позиции: %3", _playerName,_timeout,(getPosATL _playerObj)];
+			[nil, nil, rTitleText, format["ИГРОК ВЫШЕЛ В БОЮ: %1",_playerName], "PLAIN"] call RE;
+				
 			// Посылает setVariables в server_playerSync поскольку он в Главном приоритете			
 			// Сообщения - Низкий приоритет. Player object not needed
 			diag_log format["[СЕРВЕР]: [server_onPlayerDisconnect.sqf]: ИГРОК ВЫШЕЛ В БОЮ: %1(%3) Позиция: %2",_playerName,_playerPos,_playerUID];
-			
-			[nil, nil, rTitleText, format["ИГРОК ВЫШЕЛ В БОЮ: %1",_playerName], "PLAIN"] call RE;
 		};
 
 		if (dayz_enableGhosting) then

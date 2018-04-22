@@ -498,6 +498,11 @@ if (isDedicated) then
 	endLoadingScreen;
 };
 allowConnection = true;
+
+//[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+uiSleep 3;
+[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\init.sqf";
+
 sm_done = true;
 publicVariable "sm_done";
 

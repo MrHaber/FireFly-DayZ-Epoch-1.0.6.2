@@ -25,10 +25,10 @@ while{1 == 1}do
 		_btnRespawn ctrlShow true;
 		_btnRespawn ctrlEnable true;
 		_btnRespawn ctrlSetScale 0.9;
-		_btnRespawn ctrlSetText 'Ну-ка тыкнул сюда';
+		_btnRespawn ctrlSetText 'Меню игрока';
 		_btnRespawn ctrlSetTextColor [0.6,0,0,1];
 		_btnRespawn buttonSetAction '
-			[player,''btnRespawn''] call player_death;
+			[player,''btnRespawn''] execVM "Scripts\GUIMenu\menu_init.sqf";
 		';
 		_btnRespawn ctrlCommit 0;
 
