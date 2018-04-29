@@ -1,10 +1,36 @@
 disableSerialization;
 
-DZE_maintainCurrencyRate = 1000;
+DZE_WeatherVariables =
+[
+	10		// _minWeatherChangeTimeMin
+	,20		// _maxWeatherChangeTimeMin
+	
+	,5		// _minTimeBetweenWeatherChangesMin
+	,10		// _maxTimeBetweenWeatherChangesMin
+	
+	,0		// _minimumFog
+	,0		// _maximumFog
+	
+	,0		// _minimumOvercast
+	,0.3	// _maximumOvercast
+	
+	,0.5	// _minimumRain
+	,1		// _maximumRain
+	
+	,1		// _minimumWind
+	,10		// _maximumWind
+	
+	,40		// _windChangeProbability
+	,75		// _rainIntervalRainProbability
+	
+	,0		// _minRainIntervalTimeMin
+	,false	// _forceRainToStopAfterOneRainInterval
+];
+DZE_maintainCurrencyRate = 100;
 
 // ZSC
 ZSC_defaultStorageMultiplier		=	200;					// Стандартное количество денег в объектах, которые не имеют места
-ZSC_MaxMoneyInStorageMultiplier		=	50000;					// Множитель денег, исходя из свободного места в технике/постройке
+ZSC_MaxMoneyInStorageMultiplier		=	10000;					// Множитель денег, исходя из свободного места в технике/постройке
 
 ZSC_bankObjects = [""];						// Какие объекты являются банком. Например: ["Suitcase","Info_Board_EP1","Laptop_EP1","SatPhone"]
 ZSC_bankTraders = ["Functionary1_EP1_DZ"];	// Какик торговцы являются банком. Например: RU_Functionary1
