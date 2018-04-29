@@ -40,7 +40,6 @@ class CfgLoot
 		#include "Groups\Parts.hpp"
 		//DZE
 		#include "Groups\Weapons.hpp"
-		#include "Groups\Clothes.hpp"
 		#include "Groups\Backpacks.hpp"
 		#include "Groups\Wrecks.hpp"
 		
@@ -89,9 +88,9 @@ class CfgLoot
 	{
 		class Default
 		{
-			zombieChance = 0.2;
+			zombieChance = 0.4;
 			minRoaming = 0;
-			maxRoaming = 2;
+			maxRoaming = 4;
 			zombieClass[] =
 			{
 			//	"zZombie_Base",
@@ -108,7 +107,7 @@ class CfgLoot
 			};
 			
 			lootChance = 0;
-			lootRefreshTimer = 900;
+			lootRefreshTimer = 600;
 			lootGroup = "";
 			lootPos[] = {};
 		};
