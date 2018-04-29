@@ -6,12 +6,12 @@ dayz_actionInProgress = true;
 
 private ["_playerNear","_isBusy","_typeOf"];
 
-player setVariable["isBusy",true,true];
+player setVariable ["isBusy",true,true];
 _isBusy				=	true;
 ZSC_CurrentStorage	=	_this select 3;
 _typeOf				=	typeOf ZSC_CurrentStorage;
 
-if !(_typeOf in DZE_MoneyStorageClasses) exitWith
+if ((!(_typeOf in DZE_MoneyStorageClasses) && !(cursortarget isKindOf "AllVehicles"))) exitWith
 {
 	dayz_actionInProgress = false;
 	player setVariable ["isBusy",false,true];

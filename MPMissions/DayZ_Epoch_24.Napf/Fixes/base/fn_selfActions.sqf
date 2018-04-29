@@ -789,7 +789,8 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 	// Custom stuff below
 
 	if (Z_singleCurrency) then {
-		if (_isMan && {!_isAlive} && {!(_cursorTarget isKindOf "Animal")}) then {
+		_isZombie = _cursorTarget isKindOf "zZombie_base";
+		if (_isMan && !_isZombie && {!_isAlive} && {!(_cursorTarget isKindOf "Animal")}) then {
 			if (s_player_checkWallet < 0) then {
 				s_player_checkWallet = player addAction [format["<t color='#0059FF'>%1</t>",localize "STR_CL_ZSC_CHECK_WALLET"],"Scripts\ZSC\Actions\checkWallet.sqf",_cursorTarget,0,false,true];
 			};
@@ -798,7 +799,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 			s_player_checkWallet = -1;
 		};
 
-		if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!_isLocked} && {!(_typeOfCursorTarget in DZE_LockedStorage)}) then {
+		if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!_isLocked} && {_isAlive} && {!(_typeOfCursorTarget in DZE_LockedStorage)}) then {
 			if (s_bank_dialog < 0) then {
 				s_bank_dialog = player addAction [format["<t color='#0059FF'>%1</t>",localize "STR_CL_ZSC_ACCESS_BANK"],"Scripts\ZSC\Dialogs\bankDialog.sqf",_cursorTarget,1,true,true];
 			};
