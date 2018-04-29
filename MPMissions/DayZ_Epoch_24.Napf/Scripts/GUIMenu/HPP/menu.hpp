@@ -52,7 +52,7 @@ class slk_web: slkRscText
 	y = 0.1766 * safezoneH + safezoneY;
 	w = 0.0979687 * safezoneW;
 	h = 0.022 * safezoneH;
-	sizeEx = 0.040;
+	sizeEx = 0.035;
 	style = 2;
 };
 class slk_ts3: slkRscText
@@ -63,18 +63,18 @@ class slk_ts3: slkRscText
 	y = 0.176733 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
-	sizeEx = 0.040;
+	sizeEx = 0.035;
 	style = 2;
 };
 class slk_view_title: slkRscText
 {
 	idc = 1003;
 	text = "Дальность прорисовки"; //--- ToDo: Localize;
-	x = 0.42 * safezoneW + safezoneX;
+	x = 0.424 * safezoneW + safezoneX;
 	y = 0.2382 * safezoneH + safezoneY;
 	w = 0.15 * safezoneW;
 	h = 0.033 * safezoneH;
-	sizeEx = 0.050;
+	sizeEx = 0.040;
 	style = 2;
 };
 class slk_picl: slkRscPicture
@@ -89,12 +89,12 @@ class slk_picl: slkRscPicture
 class slk_action_title: slkRscText
 {
 	idc = 1004;
-	text = "Actions"; //--- ToDo: Localize;
-	x = 0.29684 * safezoneW + safezoneX;
+	text = "Действия"; //--- ToDo: Localize;
+	x = 0.265 * safezoneW + safezoneX;
 	y = 0.247 * safezoneH + safezoneY;
-	w = 0.0464063 * safezoneW;
-	h = 0.022 * safezoneH;
-	sizeEx = 0.050;
+	w = 0.1 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 0.040;
 	style = 2;
 };
 class slk_view1: slkRscButton
@@ -168,10 +168,10 @@ class slk_grass_title: slkRscText
 	idc = 1030;
 	text = "Дальность травы"; //--- ToDo: Localize;
 	x = 0.443281 * safezoneW + safezoneX;
-	y = 0.555 * safezoneH + safezoneY;
+	y = 0.599 * safezoneH + safezoneY;
 	w = 0.113437 * safezoneW;
 	h = 0.033 * safezoneH;
-	sizeEx = 0.050;
+	sizeEx = 0.040;
 	style = 2;
 };
 
@@ -180,7 +180,7 @@ class slk_grasslow: slkRscButton
 	idc = 1606;
 	text = "Малая"; //--- ToDo: Localize;
 	x = 0.443281 * safezoneW + safezoneX;
-	y = 0.599 * safezoneH + safezoneY;
+	y = 0.643 * safezoneH + safezoneY;
 	w = 0.113437 * safezoneW;
 	h = 0.022 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
@@ -191,7 +191,7 @@ class slk_grassstd: slkRscButton
 	idc = 1607;
 	text = "Стандарт"; //--- ToDo: Localize;
 	x = 0.443281 * safezoneW + safezoneX;
-	y = 0.643 * safezoneH + safezoneY;
+	y = 0.687 * safezoneH + safezoneY;
 	w = 0.113437 * safezoneW;
 	h = 0.022 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
@@ -202,7 +202,7 @@ class slk_grassfull: slkRscButton
 	idc = 1608;
 	text = "Дальняя"; //--- ToDo: Localize;
 	x = 0.443281 * safezoneW + safezoneX;
-	y = 0.687 * safezoneH + safezoneY;
+	y = 0.731 * safezoneH + safezoneY;
 	w = 0.113437 * safezoneW;
 	h = 0.022 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
@@ -212,7 +212,7 @@ class slk_act: slkRscButton
 {
 	idc = 1609;
 	text = "Беруши"; //--- ToDo: Localize;
-	x = 0.268997 * safezoneW + safezoneX;
+	x = 0.26 * safezoneW + safezoneX;
 	y = 0.28 * safezoneH + safezoneY;
 	w = 0.103125 * safezoneW;
 	h = 0.033 * safezoneH;
@@ -222,8 +222,8 @@ class slk_act: slkRscButton
 class slk_act2: slkRscButton
 {
 	idc = 1610;
-	text = "Бля кнопка"; //--- ToDo: Localize;
-	x = 0.268997 * safezoneW + safezoneX;
+	text = "UI"; //--- ToDo: Localize;
+	x = 0.26 * safezoneW + safezoneX;
 	y = 0.357 * safezoneH + safezoneY;
 	w = 0.103125 * safezoneW;
 	h = 0.033 * safezoneH;
@@ -234,16 +234,16 @@ class slk_info: slkRscText
 {
 	idc = 1005;
 	text = "Информация"; //--- ToDo: Localize;
-	x = 0.26 * safezoneW + safezoneX;
+	x = 0.252 * safezoneW + safezoneX;
 	y = 0.4428 * safezoneH + safezoneY;
 	w = 0.12 * safezoneW;
 	h = 0.033 * safezoneH;
-	sizeEx = 0.050;
+	sizeEx = 0.040;
 	style = 2;
 };
 class slk_info1: slkRscButton
 {
-	idc = 1611;
+	idc = 1651;
 	text = "Rules"; //--- ToDo: Localize;
 	x = 0.26 * safezoneW + safezoneX;
 	y = 0.5022 * safezoneH + safezoneY;
@@ -254,7 +254,7 @@ class slk_info1: slkRscButton
 };
 class slk_info2: slkRscButton
 {
-	idc = 1612;
+	idc = 1652;
 	text = "Guide"; //--- ToDo: Localize;
 	x = 0.26 * safezoneW + safezoneX;
 	y = 0.5792 * safezoneH + safezoneY;
@@ -265,7 +265,7 @@ class slk_info2: slkRscButton
 };
 class slk_info3: slkRscButton
 {
-	idc = 1613;
+	idc = 1653;
 	text = "Update"; //--- ToDo: Localize;
 	x = 0.26 * safezoneW + safezoneX;
 	y = 0.6606 * safezoneH + safezoneY;
@@ -277,7 +277,7 @@ class slk_info3: slkRscButton
 
 class slk_info4: slkRscButton
 {
-	idc = 1618;
+	idc = 1654;
 	text = "About"; //--- ToDo: Localize;
 	x = 0.26 * safezoneW + safezoneX;
 	y = 0.742 * safezoneH + safezoneY;
@@ -287,184 +287,176 @@ class slk_info4: slkRscButton
 	onButtonClick = "call info4script;";
 };
 
-class slk_deployables: slkRscText
+class slk_filters: slkRscText
 {
 	idc = 1006;
-	text = "Deployables"; //--- ToDo: Localize;
-	x = 0.644385 * safezoneW + safezoneX;
+	text = "Фильтры экрана"; //--- ToDo: Localize;
+	x = 0.619 * safezoneW + safezoneX;
 	y = 0.247 * safezoneH + safezoneY;
-	w = 0.0670312 * safezoneW;
-	h = 0.022 * safezoneH;
-	sizeEx = 0.050;
+	w = 0.12 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 0.040;
 	style = 2;
 };
-class slk_dep_1: slkRscButton
+class slk_filter_1: slkRscButton
 {
 	idc = 1614;
-	text = "Deploy 1"; //--- ToDo: Localize;
+	text = "ARMA MISSIONS"; //--- ToDo: Localize;
 	x = 0.626853 * safezoneW + safezoneX;
 	y = 0.28 * safezoneH + safezoneY;
 	w = 0.103125 * safezoneW;
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
-	onButtonClick = "call deployable1script;";
+	onButtonClick = "call filter1script;";
 };
-class slk_dep_item1: slkRscText
-{
-	idc = 1007;
-	text = "Item 1"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.324 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep_item2: slkRscText
-{
-	idc = 1008;
-	text = "Item 2"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.346 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep_item3: slkRscText
-{
-	idc = 1009;
-	text = "Item 3"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.3658 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep_item4: slkRscText
-{
-	idc = 1010;
-	text = "Item 4"; //--- ToDo: Localize;
-	x = 0.629179 * safezoneW + safezoneX;
-	y = 0.389474 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class esk_dep_2: slkRscButton
+class slk_filter_2: slkRscButton
 {
 	idc = 1615;
-	text = "Deploy 2"; //--- ToDo: Localize;
+	text = "BLUE"; //--- ToDo: Localize;
 	x = 0.626853 * safezoneW + safezoneX;
-	y = 0.456 * safezoneH + safezoneY;
+	y = 0.32 * safezoneH + safezoneY;
 	w = 0.103125 * safezoneW;
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
-	onButtonClick = "call deployable2script;";
+	onButtonClick = "call filter2script;";
 };
-class slk_dep_item5: slkRscText
-{
-	idc = 1011;
-	text = "Item 5"; //--- ToDo: Localize;
-	x = 0.629947 * safezoneW + safezoneX;
-	y = 0.4098 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep2_item1: slkRscText
-{
-	idc = 1012;
-	text = "Item 1"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.5 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep2_item2: slkRscText
-{
-	idc = 1013;
-	text = "Item 2"; //--- ToDo: Localize;
-	x = 0.629946 * safezoneW + safezoneX;
-	y = 0.522 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep2_item3: slkRscText
-{
-	idc = 1014;
-	text = "Item 3"; //--- ToDo: Localize;
-	x = 0.629947 * safezoneW + safezoneX;
-	y = 0.544 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep2_item4: slkRscText
-{
-	idc = 1015;
-	text = "Item 4"; //--- ToDo: Localize;
-	x = 0.629947 * safezoneW + safezoneX;
-	y = 0.566 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep2_item5: slkRscText
-{
-	idc = 1016;
-	text = "Item 5"; //--- ToDo: Localize;
-	x = 0.629947 * safezoneW + safezoneX;
-	y = 0.588 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
-};
-class slk_dep_3: slkRscButton
+
+class slk_filter_3: slkRscButton
 {
 	idc = 1616;
-	text = "Deploy 3"; //--- ToDo: Localize;
+	text = "CLEAR CONTRAST";  //--- ToDo: Localize;
 	x = 0.626853 * safezoneW + safezoneX;
-	y = 0.632 * safezoneH + safezoneY;
+	y = 0.36 * safezoneH + safezoneY;
 	w = 0.103125 * safezoneW;
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0.047,0.376,0.776,1};
-	onButtonClick = "call deployable3script;";
+	onButtonClick = "call filter3script;";
 };
-class slk_dep3_item1: slkRscText
+
+class slk_filter_4: slkRscButton
 {
-	idc = 1017;
-	text = "Item 1"; //--- ToDo: Localize;
-	x = 0.628915 * safezoneW + safezoneX;
-	y = 0.676 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
+	idc = 1617;
+	text = "DEMONIC"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.40 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter4script;";
 };
-class slk_dep3_item2: slkRscText
+class slk_filter_5: slkRscButton
 {
-	idc = 1018;
-	text = "Item 2"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.698 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
+	idc = 1618;
+	text = "OPERATION FP"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.44 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter5script;";
 };
-class slk_dep3_item3: slkRscText
+
+class slk_filter_6: slkRscButton
 {
-	idc = 1019;
-	text = "Item 3"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.7178 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
+	idc = 1619;
+	text = "OLD PHOTO";  //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.48 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter6script;";
 };
-class slk_dep3_item4: slkRscText
+class slk_filter_7: slkRscButton
 {
-	idc = 1020;
-	text = "Item 4"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.7398 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
+	idc = 1620;
+	text = "SAND"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.52 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter7script;";
 };
-class slk_dep3_item5: slkRscText
+class slk_filter_8: slkRscButton
 {
-	idc = 1021;
-	text = "Item 5"; //--- ToDo: Localize;
-	x = 0.628916 * safezoneW + safezoneX;
-	y = 0.7618 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.011 * safezoneH;
+	idc = 1621;
+	text = "SEPIA"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.56 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter8script;";
+};
+
+class slk_filter_9: slkRscButton
+{
+	idc = 1622;
+	text = "SMOOTH";  //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.60 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter9script;";
+};
+
+class slk_filter_10: slkRscButton
+{
+	idc = 1623;
+	text = "SUMMER"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.64 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter10script;";
+};
+class slk_filter_11: slkRscButton
+{
+	idc = 1624;
+	text = "TROPICAL"; //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.68 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter11script;";
+};
+
+class slk_filter_12: slkRscButton
+{
+	idc = 1625;
+	text = "WAR";  //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.72 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter12script;";
+};
+class slk_filter_13: slkRscButton
+{
+	idc = 1626;
+	text = "INFECTED";  //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.76 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filter13script;";
+};
+class slk_filter_clear: slkRscButton
+{
+	idc = 1630;
+	text = "СБРОС ФИЛЬТРА";  //--- ToDo: Localize;
+	x = 0.626853 * safezoneW + safezoneX;
+	y = 0.82 * safezoneH + safezoneY;
+	w = 0.103125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.047,0.376,0.776,1};
+	onButtonClick = "call filterClearscript;";
 };
 class slk_close: slkRscButton
 {

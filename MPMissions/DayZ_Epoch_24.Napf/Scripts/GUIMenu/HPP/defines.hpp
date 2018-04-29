@@ -285,7 +285,7 @@ class slkRscStructuredText
 	h = 0.035;
 	w = 0.1;
 	text = "";
-	size = 0.03921;
+	size = 0.025;
 	shadow = 2;
 };
 class slkRscFrame

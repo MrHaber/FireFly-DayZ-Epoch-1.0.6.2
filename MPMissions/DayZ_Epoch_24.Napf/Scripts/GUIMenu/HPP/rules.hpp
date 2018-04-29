@@ -51,7 +51,7 @@ class slk_title1: slkRscText
 	text = ""; //--- ToDo: Localize;
 	x = 0.226719 * safezoneW + safezoneX;
 	y = 0.2514 * safezoneH + safezoneY;
-	w = 0.118594 * safezoneW;
+	w = 0.418594 * safezoneW;
 	h = 0.1 * safezoneH;
 	colorText[] = {0.882,0.02,0.176,1};
 };
@@ -62,8 +62,8 @@ class slk_rules1: slkRscStructuredText
 	text = ""; //--- ToDo: Localize;
 	x = 0.226718 * safezoneW + safezoneX;
 	y = 0.2778 * safezoneH + safezoneY;
-	w = 0.546562 * safezoneW;
-	h = 0.2 * safezoneH;
+	w = 0.346562 * safezoneW;
+	h = 0.4 * safezoneH;
 	sizeEx = 0.020;
 };
 class slk_title2: slkRscText
