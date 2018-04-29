@@ -79,6 +79,7 @@ if (_outcome != "PASS") then
 	_object setVariable ["lastUpdate",diag_tickTime];
 	_object setVariable ["CharacterID", _characterID, true];
 	_object setDamage _damage;
+	_object setVehicleAmmo 0;
 
 	{
 		_selection	=	_x select 0;

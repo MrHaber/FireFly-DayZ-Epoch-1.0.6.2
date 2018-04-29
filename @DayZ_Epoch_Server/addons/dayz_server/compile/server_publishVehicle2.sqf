@@ -99,7 +99,8 @@ else
 	{
 		_object setvehiclelock "locked";
 	};
-
+	
+	_object setVehicleAmmo 0;
 	clearWeaponCargoGlobal  _object;
 	clearMagazineCargoGlobal  _object;
 	dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_object];
