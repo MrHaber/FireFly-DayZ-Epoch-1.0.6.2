@@ -1,12 +1,7 @@
-[
-	// Бандит
-		["RUS_Soldier2", [7670, 11765, 0], 190]
-		// Герой
-		,["Tanny_PMC", [15931, 10396, 0], 180]
-		
+[		
 		/* Общая 1 */
 			// Оружие
-		,["US_Delta_Force_AR_EP1", [3175, 12179, 0], 270]
+		["US_Delta_Force_AR_EP1", [3175, 12179, 0], 270]
 			// Патроны
 		,["Graves", [3175, 12181, 0], 270]
 			// Техника
@@ -62,10 +57,10 @@
 ] call server_spawnTraders;
 
 execVM "\z\addons\dayz_server\buildings\Trade1.sqf";
-Sleep 3;
+Sleep 1;
 execVM "\z\addons\dayz_server\buildings\Trade2.sqf";
-Sleep 3;
+Sleep 1;
 execVM "\z\addons\dayz_server\buildings\Trade3.sqf";
-Sleep 3;
+Sleep 1;
 execVM "\z\addons\dayz_server\buildings\Trade4.sqf";
-Sleep 3;
+Sleep 1;
