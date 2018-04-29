@@ -34,7 +34,7 @@ class Mission
 	class Intel
 	{
 		briefingName="FireFly DayZ Epoch Napf";
-		briefingDescription="Версия сервера: 1.0.00 Release";
+		briefingDescription="Версия сервера: 1.4.21 Release";
 		startWeather=0.25;
 		forecastWeather=0;
 		year=2018;
@@ -187,7 +187,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=21;
+		items=19;
 		class Item0
 		{
 			position[]={10010,110,10448};
@@ -284,29 +284,13 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={7665, 0, 11765};
-			name="Bandit";
-			text="Бандит";
-			type="mil_dot";
-			colorName="ColorRed";
-		};
-		class Item16
-		{
-			position[]={15930, 0, 10400};
-			name="Hero";
-			text="Герой";
-			type="mil_dot";
-			colorName="ColorBlue";
-		};
-		class Item17
-		{
 			position[]={3160, 0, 12110};
 			name="Allies1";
 			text="ТЗ Церковь";
 			type="Defend";
 			colorName="ColorGreen";
 		};
-		class Item18
+		class Item16
 		{
 			position[]={9670, 0, 2955};
 			name="Allies2";
@@ -314,7 +298,7 @@ class Mission
 			type="Defend";
 			colorName="ColorGreen";
 		};
-		class Item19
+		class Item17
 		{
 			position[]={10580, 0, 13110};
 			name="Allies3";
@@ -322,7 +306,7 @@ class Mission
 			type="Defend";
 			colorName="ColorGreen";
 		};
-		class Item20
+		class Item18
 		{
 			position[]={13155, 0, 6395};
 			name="Allies4";
@@ -333,7 +317,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=6;
+		items=4;
 #define TRGDEF a=100;b=100;activationBy="WEST";repeating=1;interruptable=1;age="UNKNOWN";class Effects{};
 		class Item0
 		{
@@ -370,33 +354,6 @@ class Mission
 			expCond="(player distance Storosh) < 200;";
 			expActiv="[""Торговая зона - Сторож"",true,""enter""] call player_traderCity;";
 			expDesactiv="[""Торговая зона - Сторож"",true,""leave""] call player_traderCity;";
-		};
-		class Item4
-		{
-			position[]={7665, 0, 11765};
-			TRGDEF
-			name="Bandit";
-			expCond="(player distance Bandit) < 100;";
-			expActiv="[""Бандит"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Бандит"",true,""leave""] call player_traderCity;";
-		};
-		class Item5
-		{
-			position[]={15930, 5, 10400};
-			TRGDEF
-			name="Hero";
-			expCond="(player distance Hero) < 100;";
-			expActiv="[""Герой"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""Герой"",true,""leave""] call player_traderCity;";
-		};
-		class Item6
-		{
-			position[]={15128,19,16421};
-			TRGDEF
-			name="AWOL";
-			expCond="(player distance awol) < 150;";
-			expActiv="[""АвиаДиллер"",true,""enter""] call player_traderCity;";
-			expDesactiv="[""АвиаДиллер"",true,""leave""] call player_traderCity;";
 		};
 	};
 };
