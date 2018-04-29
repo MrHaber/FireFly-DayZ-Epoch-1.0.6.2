@@ -7,7 +7,7 @@ dayz_REsec			=	0;				// DayZ RE Security / 1 = Вкл / 0 = Выкл
 dayz_ForcefullmoonNights 	= 	false; 		// Луна ночью
 
 // Настройки скриптов
-UseWeather = false;
+UseWeather = true;
 UseRndLoadout = true;
 UseSafeZone = true;
 
@@ -30,9 +30,9 @@ dayz_townGeneratorBlackList 	= 	[];
 EpochUseEvents = true;		// Использовать Систему Эвентов?
 EpochEvents =
 [
-	 ["any","any","any","any",15,"animated_crash_spawner"]
-	,["any","any","any","any",30,"animated_crash_spawner"]
-	,["any","any","any","any",45,"animated_crash_spawner"]
+	 ["any","any","any","any",25,"animated_crash_spawner"]
+	,["any","any","any","any",50,"animated_crash_spawner"]
+	,["any","any","any","any",75,"animated_crash_spawner"]
 ];
 
 
@@ -66,6 +66,11 @@ progressLoadingScreen 0.25;
 call compile preprocessFileLineNumbers "server_traders.sqf";
 initialized = true;
 
+if (UseSafeZone) then
+{
+	execVM "Scripts\Other\SafeZone.sqf";
+};
+
 setViewDistance 3000;
 setTerrainGrid 25;
 
@@ -78,7 +83,6 @@ if (UseWeather) then
 {
 	execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 };
-DZE_WeatherVariables = [10, 20, 5, 10, 0, 0.2, 0, 0.7, 0, 0.6, 0, 8, 25, 30, 0, false];
 
 if (isServer) then
 {
@@ -111,11 +115,6 @@ if (!isDedicated) then
 	};
 	
 	execVM "\z\addons\dayz_code\system\antihack.sqf";
-	
-	if (UseSafeZone) then
-	{
-		execVM "Scripts\Other\SafeZone.sqf";
-	};
 
 	execVM "Scripts\Other\EscMenuTitle.sqf";
 	
