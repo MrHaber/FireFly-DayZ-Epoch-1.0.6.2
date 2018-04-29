@@ -2,7 +2,7 @@ respawn = "BASE";
 respawnDelay = 0;
 respawnDialog = 0;
 onLoadMission = "FireFly DayZ Epoch Napf";
-OnLoadIntro = "Версия сервера: 1.0.00 Release";
+OnLoadIntro = "Версия сервера: 1.4.21 Release";
 OnLoadIntroTime = 0;
 OnLoadMissionTime = 0;
 disabledAI = 1;
@@ -66,11 +66,11 @@ class RscTitles {
 				class Attributes {
 					font = "EtelkaNarrowMediumPro";
 					color = "#24FFFFFF";
-					align = "left"; // put "center" here if you want some background
+					align = "left";
 					valign = "middle";
 					shadow = 2;
 				};
-				colorBackground[] = { 1, 0.3, 0, 0 };  // uncomment and increase 4th number to have a background
+				colorBackground[] = { 1, 0.3, 0, 0 };
 				font = "EtelkaNarrowMediumPro";
 				size = 0.06*safeZoneH;
 				type = 13;
@@ -88,9 +88,9 @@ class RscTitles {
 #include "Configs\CfgLoot\CfgLoot.hpp"
 #include "Configs\CfgTraders\CfgServerTrader.hpp"
 
-#include "Scripts\GUIMenu\defines.hpp"
-#include "Scripts\GUIMenu\menu.hpp"
-#include "Scripts\GUIMenu\rules.hpp"
-#include "Scripts\GUIMenu\rules2.hpp"
+#include "Scripts\GUIMenu\HPP\defines.hpp"
+#include "Scripts\GUIMenu\HPP\menu.hpp"
+#include "Scripts\GUIMenu\HPP\rules.hpp"
+#include "Scripts\GUIMenu\HPP\update.hpp"
 
 #include "HPP\Ultima_Admins_Menu.hpp"
