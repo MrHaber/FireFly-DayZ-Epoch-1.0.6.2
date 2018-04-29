@@ -19,7 +19,6 @@ CrashSiteRU[] =
 	{Loot_GROUP,		7,		sniperrifles},
 	{Loot_GROUP,		6,		machineguns},
 	{Loot_GROUP,		3,		Military},
-	{Loot_WEAPON,		0.2,	MAAWS},
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
@@ -28,10 +27,6 @@ CrashSiteRU[] =
 	//Backpacks
 	{Loot_GROUP,		4,		militarybackpacks},
 	{Loot_GROUP,		4,		militaryVehicleAmmo},
-
-	//Clothing
-	{Loot_GROUP,		3,		militaryclothes},
-	{Loot_GROUP,		2,		specialclothes},
 	
 	//Containers
 	{Loot_CONTAINER,	1,		DZ_MedBox, MedicalBox, 10, 20},
@@ -78,7 +73,6 @@ CrashSiteUS[] =
 	{Loot_GROUP,		7,		sniperrifles},
 	{Loot_GROUP,		6,		machineguns},
 	{Loot_GROUP,		3,		Military},
-	{Loot_WEAPON,		0.2,	MAAWS},
 
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
@@ -88,10 +82,6 @@ CrashSiteUS[] =
 	//Backpacks
 	{Loot_GROUP,		4,		militarybackpacks},
 	{Loot_GROUP,		4,		militaryVehicleAmmo},
-
-	//Clothing
-	{Loot_GROUP,		3,		militaryclothes},
-	{Loot_GROUP,		2,		specialclothes},
 
 	//Containers
 	//{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
@@ -136,7 +126,6 @@ CrashSiteEU[] =
 	{Loot_GROUP,		7,		sniperrifles},
 	{Loot_GROUP,		6,		machineguns},
 	{Loot_GROUP,		3,		Military},
-	{Loot_WEAPON,		0.2,	MAAWS},
 
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
@@ -146,10 +135,6 @@ CrashSiteEU[] =
 	//Backpacks
 	{Loot_GROUP,		4,		militarybackpacks},
 	{Loot_GROUP,		4,		militaryVehicleAmmo},
-
-	//Clothing
-	{Loot_GROUP,		3,		militaryclothes},
-	{Loot_GROUP,		2,		specialclothes},
 	
 	//Containers
 	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
@@ -194,7 +179,6 @@ CrashSiteUN[] =
 	{Loot_GROUP,		7,		sniperrifles},
 	{Loot_GROUP,		6,		machineguns},
 	{Loot_GROUP,		3,		Military},
-	{Loot_WEAPON,		0.2,	MAAWS},
 
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
@@ -204,10 +188,6 @@ CrashSiteUN[] =
 	//Backpacks
 	{Loot_GROUP,		4,		militarybackpacks},
 	{Loot_GROUP,		4,		militaryVehicleAmmo},
-	
-	//Clothing
-	{Loot_GROUP,		3,		militaryclothes},
-	{Loot_GROUP,		2,		specialclothes},
 	
 	//Containers
 	{Loot_CONTAINER,	10,		DZ_MedBox, MedicalBox, 10, 20},

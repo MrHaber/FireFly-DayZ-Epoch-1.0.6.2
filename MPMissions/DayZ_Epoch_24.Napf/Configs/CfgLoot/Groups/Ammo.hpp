@@ -19,10 +19,7 @@ AmmoCivilian[] =
 	{Loot_MAGAZINE,		5,		2Rnd_12Gauge_Slug}
 };
 militaryVehicleAmmo[] = { //DZE
-	{Loot_MAGAZINE,		2,		2000Rnd_762x51_M134},
-	{Loot_MAGAZINE,		2,		29Rnd_30mm_AGS30},
 	{Loot_MAGAZINE,		2,		50Rnd_127x107_DSHKM},
-	{Loot_MAGAZINE,		2,		48Rnd_40mm_MK19},
 	{Loot_MAGAZINE,		3,		100Rnd_127x99_M2}
 };
 AmmoMilitaryLow[] =
@@ -82,18 +79,11 @@ AmmoMilitaryLow[] =
 
 	//DZE
 	{Loot_MAGAZINE,		3,		5Rnd_127x108_KSVK},
-	{Loot_MAGAZINE,		2,		10Rnd_127x99_m107},
 	{Loot_MAGAZINE,		4,		5Rnd_17HMR},
-	{Loot_MAGAZINE,		3,		20Rnd_762x51_SB_SCAR},
 	{Loot_MAGAZINE,		3,		20Rnd_9x39_SP5_VSS},
-	{Loot_MAGAZINE,		3,		5Rnd_86x70_L115A1},
 	{Loot_MAGAZINE,		3,		20Rnd_B_765x17_Ball},
 	{Loot_MAGAZINE,		4,		20Rnd_762x51_DMR},
 	{Loot_MAGAZINE,		4,		20Rnd_762x51_FNFAL},
-	{Loot_MAGAZINE,		3,		20Rnd_762x51_B_SCAR},
-	{Loot_MAGAZINE,		4,		20Rnd_B_AA12_Pellets},
-	{Loot_MAGAZINE,		4,		20Rnd_B_AA12_74Slug},
-//	{Loot_MAGAZINE,		3,		20Rnd_B_AA12_HE},
 	
 	//Handgrenades
 	{Loot_MAGAZINE,		5,		SmokeShell},
@@ -109,10 +99,6 @@ AmmoMilitaryHigh[] =
 	{Loot_MAGAZINE,		10,		30Rnd_556x45_Stanag},
 	{Loot_MAGAZINE,		5,		30Rnd_556x45_G36},
 	{Loot_MAGAZINE,		5,		100Rnd_556x45_BetaCMag},
-	{Loot_MAGAZINE,		5,		20Rnd_762x51_B_SCAR},
-	{Loot_MAGAZINE,		5,		20Rnd_B_AA12_Pellets},
-	{Loot_MAGAZINE,		5,		20Rnd_B_AA12_74Slug},
-//	{Loot_MAGAZINE,		5,		20Rnd_B_AA12_HE},
 	
 	//Battle rifles
 	{Loot_MAGAZINE,		5,		20Rnd_762x51_DMR},
@@ -132,12 +118,10 @@ AmmoMilitaryHigh[] =
 	{Loot_MAGAZINE,		6,		10Rnd_762x54_SVD},
 
 	//DZE
-	{Loot_MAGAZINE,		6,		5Rnd_86x70_L115A1},
 	{Loot_MAGAZINE,		7,		20Rnd_B_765x17_Ball},
 
 	//Handgrenades
-	{Loot_MAGAZINE,		2,		HandGrenade_East},
-	{Loot_MAGAZINE,		1,		HandGrenade_West}
+	{Loot_MAGAZINE,		2,		HandGrenade_East}
 };
 
 //TODO: Chernarussian ammo groups (building loot)
@@ -242,7 +226,6 @@ AmmoEU[] =
 	
 	//Battle rifles
 	{Loot_MAGAZINE,		4,		20Rnd_762x51_FNFAL},
-	{Loot_MAGAZINE,		5,		20Rnd_762x51_B_SCAR},
 	
 	//Machine guns
 	{Loot_MAGAZINE,		2,		100Rnd_556x45_M249},
@@ -262,7 +245,7 @@ AmmoEU[] =
 	{Loot_MAGAZINE,		2,		SmokeShell},
 	{Loot_MAGAZINE,		2,		SmokeShellRed},
 	{Loot_MAGAZINE,		2,		SmokeShellGreen},
-	{Loot_MAGAZINE,		2,		HandGrenade_West}
+	{Loot_MAGAZINE,		2,		HandGrenade_East}
 };
 
 AmmoUN[] =
@@ -310,14 +293,10 @@ AmmoUN[] =
 
 //DZE
 sniperriflesammo[] = {
-	{Loot_MAGAZINE,		3,		5Rnd_127x108_KSVK},
-	{Loot_MAGAZINE,		3,		5Rnd_86x70_L115A1},
-	{Loot_MAGAZINE,		2,		10Rnd_127x99_m107},
 	{Loot_MAGAZINE,		3,		10Rnd_762x54_SVD},
 	{Loot_MAGAZINE,		4,		20Rnd_762x51_DMR},
 	{Loot_MAGAZINE,		4,		5Rnd_762x51_M24},
 	{Loot_MAGAZINE,		4,		5Rnd_17HMR},
-	{Loot_MAGAZINE,		3,		20Rnd_762x51_SB_SCAR},
 	{Loot_MAGAZINE,		3,		20Rnd_9x39_SP5_VSS}
 };
 assaultrifleammo[] = {
@@ -327,8 +306,7 @@ assaultrifleammo[] = {
 	{Loot_MAGAZINE,		8,		30Rnd_556x45_Stanag},
 	{Loot_MAGAZINE,		10,		30Rnd_545x39_AK},
 	{Loot_MAGAZINE,		5,		30Rnd_556x45_StanagSD},
-	{Loot_MAGAZINE,		8,		20Rnd_762x51_FNFAL},
-	{Loot_MAGAZINE,		6,		20Rnd_762x51_B_SCAR}
+	{Loot_MAGAZINE,		8,		20Rnd_762x51_FNFAL}
 };
 machinegunammo[] = {
 	{Loot_MAGAZINE,		4,		100Rnd_556x45_BetaCMag},
@@ -344,7 +322,5 @@ machinegunammoexpl[] = {
 	{Loot_MAGAZINE,		4,		100Rnd_556x45_M249},
 	{Loot_MAGAZINE,		3,		100Rnd_762x51_M240},
 	{Loot_MAGAZINE,		3,		100Rnd_762x54_PK},
-	{Loot_MAGAZINE,		4,		200Rnd_556x45_M249},
-	{Loot_MAGAZINE,		1,		MAAWS_HEAT},
-	{Loot_MAGAZINE,		2,		PipeBomb}
+	{Loot_MAGAZINE,		4,		200Rnd_556x45_M249}
 };

@@ -27,8 +27,6 @@ Residential[] =
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 2},
 	{Loot_GROUP,		4,		AttachmentsGeneric},
-	{Loot_GROUP,		5,		clothes},
-	{Loot_GROUP,		3,		specialclothes},
 	{Loot_GROUP,		3,		tents},
 	{Loot_WEAPON,		3,		ItemMatchbox},
 	{Loot_GROUP,		8,		Generic}
@@ -47,8 +45,6 @@ ResidentialSmall[] =
 	{Loot_GROUP,		10,		Trash},
 	{Loot_GROUP,		10,		Consumable},
 	{Loot_GROUP,		4,		AttachmentsGeneric},
-	{Loot_GROUP,		5,		clothes},
-	{Loot_GROUP,		3,		specialclothes},
 	{Loot_WEAPON,		3,		ItemMatchbox},
 	{Loot_GROUP,		8,		GenericSmall}
 };

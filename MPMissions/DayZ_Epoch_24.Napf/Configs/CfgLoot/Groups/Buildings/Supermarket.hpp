@@ -14,11 +14,11 @@ Supermarket[] =
 	{Loot_GROUP,		10,		pistols},
 	{Loot_GROUP,		5,		shotgunsingleshot},
 	//Rifles
-/*	{Loot_WEAPON,		1,		LeeEnfield_DZ},
+	{Loot_WEAPON,		1,		LeeEnfield_DZ},
 	{Loot_WEAPON,		1,		Mosin_DZ},
 	{Loot_WEAPON,		2,		Winchester1866_DZ},
 	{Loot_WEAPON,		2,		MR43_DZ},
-	{Loot_WEAPON,		2,		Crossbow_DZ},*/
+	{Loot_WEAPON,		2,		Crossbow_DZ},
 	
 	//Backpacks
 	{Loot_GROUP,		5,		backpacks},

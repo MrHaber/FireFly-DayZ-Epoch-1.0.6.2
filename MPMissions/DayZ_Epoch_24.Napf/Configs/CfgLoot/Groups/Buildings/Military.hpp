@@ -57,8 +57,6 @@ MilitarySmall[] =
 	{Loot_TOOL,			0.5,	ItemGPS},
 	{Loot_TOOL,			3,		ItemMap},
 	{Loot_TOOL,			3,		ItemKnife},
-	{Loot_GROUP,		2,		militaryclothes},
-	{Loot_GROUP,		2,		specialclothes},
 	{Loot_GROUP,		15,		AmmoMilitaryLow},
 	{Loot_GROUP,		4,		AmmoMilitaryHigh},
 	{Loot_GROUP,		4,		AttachmentsGeneric},
@@ -71,7 +69,6 @@ MilitarySmall[] =
 
 MilitarySpecial[] =
 {
-	{Loot_WEAPON,		2,		NVGoggles},
 	{Loot_GROUP,		10,		pistols},
 	{Loot_GROUP,		5,		shotgunsingleshot},
 	{Loot_GROUP,		9,		sniperrifles},
@@ -108,8 +105,6 @@ MilitarySpecial[] =
 	//Other
 	{Loot_MAGAZINE,		3,		FoodMRE},
 //	{Loot_MAGAZINE,		2,		ItemSandbag},
-	{Loot_MAGAZINE,		0.5,	PipeBomb},
-	{Loot_MAGAZINE,		0.5,	MAAWS_HEAT},
 	{Loot_MAGAZINE,		2,		100Rnd_762x54_PK},
 	{Loot_PILE,			15,		AmmoMilitaryLow, 1, 4},
 	{Loot_PILE,			10,		AmmoMilitaryHigh, 1, 3},
@@ -124,7 +119,6 @@ MilitarySpecial[] =
 
 MilitarySpecialSmall[] =
 {
-	{Loot_WEAPON,		2,		NVGoggles},
 	{Loot_GROUP,		10,		pistols},
 	{Loot_TOOL,			3,		Binocular},
 	{Loot_TOOL,			2,		Binocular_Vector},
@@ -133,8 +127,6 @@ MilitarySpecialSmall[] =
 	{Loot_TOOL,			3,		ItemMap},
 	{Loot_GROUP,		3,		militaryclothes},
 	{Loot_GROUP,		2,		specialclothes},
-	{Loot_MAGAZINE,		0.5,	PipeBomb},
-	{Loot_MAGAZINE,		0.5,	MAAWS_HEAT},
 	{Loot_MAGAZINE,		2,		100Rnd_762x54_PK},
 	{Loot_GROUP,		15,		AmmoMilitaryLow},
 	{Loot_GROUP,		10,		AmmoMilitaryHigh},

@@ -21,8 +21,6 @@ Office[] =
 	//Backpacks
 	{Loot_GROUP,		4,		backpacks},
 	{Loot_GROUP,		4,		tents},
-	{Loot_GROUP,		3,		clothes},
-	{Loot_GROUP,		2,		specialclothes},
 	
 	//Items
 	{Loot_MAGAZINE,		5,		ItemAntibacterialWipe},
@@ -52,8 +50,6 @@ OfficeSmall[] =
 	{Loot_WEAPON,		4,		Binocular},
 	{Loot_GROUP,		10,		pistols},
 	{Loot_GROUP,		4,		MilitarySmall},
-	{Loot_GROUP,		3,		clothes},
-	{Loot_GROUP,		2,		specialclothes},
 	{Loot_MAGAZINE,		5,		ItemAntibacterialWipe},
 	{Loot_MAGAZINE,		5,		ItemPainkiller},
 	{Loot_GROUP,		8,		Consumable},

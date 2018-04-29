@@ -4,8 +4,7 @@ ZombieCivilian[] =
 	{Loot_GROUP,		1,		AmmoCivilian},
 	{Loot_MAGAZINE,		3,		ItemBandage},
 	{Loot_MAGAZINE,		2,		ItemPainkiller},
-	{Loot_MAGAZINE,		2,		ItemAntibacterialWipe},
-	{Loot_MAGAZINE,		3,		ItemDocument}
+	{Loot_MAGAZINE,		2,		ItemAntibacterialWipe}
 };
 
 ZombieCivilianViral[] =

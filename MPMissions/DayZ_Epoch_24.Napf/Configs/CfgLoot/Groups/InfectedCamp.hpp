@@ -52,7 +52,6 @@ InfectedCamp[] =
 	{Loot_MAGAZINE,		1,		ItemWire},
 	{Loot_MAGAZINE,		4,		ItemTankTrap},
 	{Loot_MAGAZINE,		6,		PartWoodPile},
-	{Loot_GROUP,		6,		militaryclothes},
 	{Loot_MAGAZINE,		2,		ItemBookBible},
 	
 	//Groups

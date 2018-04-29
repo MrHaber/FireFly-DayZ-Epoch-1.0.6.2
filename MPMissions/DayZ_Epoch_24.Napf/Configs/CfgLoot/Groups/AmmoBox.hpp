@@ -49,9 +49,7 @@ AmmoBoxEU1[] =
 AmmoBoxEU2[] =
 {
 	{Loot_MAGAZINE,		9,		20Rnd_762x51_FNFAL},
-	{Loot_MAGAZINE, 	5, 		20Rnd_762x51_B_SCAR},
-	{Loot_MAGAZINE,		1,		100Rnd_762x51_M240},
-	{Loot_MAGAZINE,		4,		5Rnd_86x70_L115A1}
+	{Loot_MAGAZINE,		1,		100Rnd_762x51_M240}
 };
 
 //7.62x39mm
@@ -91,8 +89,7 @@ AmmoBoxRU5[] =
 	{Loot_MAGAZINE,		2,		HandGrenade_East},
 	{Loot_MAGAZINE,		1,		SmokeShell},
 	{Loot_MAGAZINE,		1,		SmokeShellRed},
-	{Loot_MAGAZINE,		1,		SmokeShellGreen},
-	{Loot_MAGAZINE,		0.1,	PipeBomb}
+	{Loot_MAGAZINE,		1,		SmokeShellGreen}
 };
 
 //Explosives
@@ -101,6 +98,5 @@ AmmoBoxUS4[] =
 	{Loot_MAGAZINE,		2,		HandGrenade_West},
 	{Loot_MAGAZINE,		1,		SmokeShell},
 	{Loot_MAGAZINE,		1,		SmokeShellRed},
-	{Loot_MAGAZINE,		1,		SmokeShellGreen},
-	{Loot_MAGAZINE,		0.3,	PipeBomb}
+	{Loot_MAGAZINE,		1,		SmokeShellGreen}
 };
