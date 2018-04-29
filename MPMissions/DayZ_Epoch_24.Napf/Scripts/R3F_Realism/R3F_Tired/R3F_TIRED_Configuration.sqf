@@ -1,30 +1,20 @@
-﻿/****************************************************************************
-Copyright (C) 2010 Team ~R3F~
-This program is free software under the terms of the GNU General Public License version 3.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-@authors team-r3f.org
-@version 1.00
-@date 20101006
-*****************************************************************************/
-
-//Uncomment to write in arma.rpt a csv file for excel to trace some graphics
+﻿// Раскомментируйте, если хотите получить пару графиков из arma.rpt в csv файл для excel
 // #define R3F_TIRED_CSV_EXPORT
 
-//Uncomment to show some informations in game
+// Раскомментируйте, если вам нужна откладка
 // #define R3F_TIRED_DEBUG
 
-//adjustment player weight with helmet jacket Rangers  Light equipment (not weapons)
-#define R3F_TIRED_WEIGHT_PLAYER_EMPTY 90
+// Регулеровка веса со Шлемом и т.п. (Не оружие)
+#define R3F_TIRED_WEIGHT_PLAYER_EMPTY 60
 
-//Predefined models for an easy setting
-// uncomment only one setting
+// Уровень сложности
+// Раскомментируйте только ОДНУ сложность!
 // #define R3F_TIRED_SET_MODE_EASY
-#define R3F_TIRED_SET_MODE_UBEREASY
-//#define R3F_TIRED_SET_MODE_NORMAL
-//#define R3F_TIRED_SET_MODE_HARD
+// #define R3F_TIRED_SET_MODE_UBEREASY
+#define R3F_TIRED_SET_MODE_NORMAL
+// #define R3F_TIRED_SET_MODE_HARD
 
-//adjustment weight * speed player
+// Установка Веса * Скорость игрока
 #define R3F_TIRED_WEIGHT_SPEED_RATIO 1
 
 
@@ -89,7 +79,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	
 
 	#define R3F_TIRED_SHORTNESS_THRESHOLD	0.6
-	#define R3F_TIRED_UNCONSCIOUSNESS_DURATION 30
+	#define R3F_TIRED_UNCONSCIOUSNESS_DURATION 60
 #endif
 
 #ifdef R3F_TIRED_SET_MODE_HARD
@@ -110,7 +100,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	#define R3F_TIRED_WEIGHT_LEVEL3 25
 
 	#define R3F_TIRED_SHORTNESS_THRESHOLD	0.3
-	#define R3F_TIRED_UNCONSCIOUSNESS_DURATION 60
+	#define R3F_TIRED_UNCONSCIOUSNESS_DURATION 120
 #endif
 
 // ratio of threshold weight

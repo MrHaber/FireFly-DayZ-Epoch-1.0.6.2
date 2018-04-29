@@ -8,6 +8,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 @date 20101018
 *****************************************************************************/
 
-call compile preprocessFile "\z\addons\dayz_code\external\R3F_Realism\R3F_Weight\R3F_Weight_Fnct.sqf";
+call compile preprocessFile "Scripts\R3F_Weight\R3F_Weight_Fnct.sqf";
 
-_void = [] execVM "\z\addons\dayz_code\external\R3F_Realism\R3F_Weight\R3F_DoWeight.sqf";
+_void = [] execVM "Scripts\R3F_Weight\R3F_DoWeight.sqf";
