@@ -50,7 +50,6 @@ GivePlayerDialogAmounts =
 BankDialogWithdrawAmount =
 {
 	private ["_amount","_bank","_wealth","_vehicleType","_displayName"];
-
 	_amount			=	(_this select 0) call fnc_sanitizeInput;
 	_bank			=	ZSC_CurrentStorage getVariable [Z_MoneyVariable,0];
 	_wealth			=	player getVariable [Z_MoneyVariable,0];
@@ -127,8 +126,8 @@ GivePlayerAmount =
 {
 	private ["_amount","_wealth","_twealth","_isBusy"];
 	_amount			=	(_this select 0) call fnc_sanitizeInput;
-	_wealth			=	player getVariable[Z_MoneyVariable,0];
-	_twealth		=	ZSC_GiveMoneyTarget getVariable[Z_MoneyVariable,0];
+	_wealth			=	player getVariable [Z_MoneyVariable,0];
+	_twealth		=	ZSC_GiveMoneyTarget getVariable [Z_MoneyVariable,0];
 	_isBusy			=	ZSC_GiveMoneyTarget getVariable ["isBusy",false];
 	_vehicleType	=	typeOf ZSC_GiveMoneyTarget; 
 
