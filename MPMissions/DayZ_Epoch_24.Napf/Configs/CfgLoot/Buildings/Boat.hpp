@@ -12,8 +12,8 @@ class Land_Nav_Boathouse : Default
 
 class Land_BoatSmall_2b : Default
 {	
-	zombieChance = 0;
-	maxRoaming = 0;	
+	zombieChance = 0.1;
+	maxRoaming = 3;	
 //	zedPos[] = {{0.00390625,-0.250977,-0.348389}};
 	lootChance = 0.1;
 	lootPos[] = {{0.00390625,-0.250977,-0.348389}};

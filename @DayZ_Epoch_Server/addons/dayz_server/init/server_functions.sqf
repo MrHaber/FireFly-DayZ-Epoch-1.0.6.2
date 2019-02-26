@@ -1,7 +1,5 @@
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 
-[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\init\Scripts\Ultima_Admins\Ultima_Admins_Init.sqf";
-
 waitUntil {!isNil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer =
@@ -27,7 +25,6 @@ dayz_serverKey = toString dayz_serverKey;
 
 server_playerLogin			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
-server_Procedures_Player_Anti_Relog			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_Procedures_Player_Anti_Relog.sqf";
 server_onPlayerDisconnect	=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_onPlayerDisconnect.sqf";
 server_updateObject			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_updateObject.sqf";
 server_playerDied			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDied.sqf";
@@ -41,6 +38,7 @@ base_fireMonitor			=	compile preprocessFileLineNumbers "\z\addons\dayz_code\syst
 //server_systemCleanup = compile preprocessFileLineNumbers "\z\addons\dayz_server\system\server_cleanup.sqf";
 spawnComposition			=	compile preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"; //"\z\addons\dayz_code\compile\object_mapper.sqf";
 server_sendToClient			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendToClient.sqf";
+server_RemoveVehicleAmmo	=	compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_RemoveVehicleAmmo.sqf";
 server_verifySender			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_verifySender.sqf";
 
 // EPOCH ADDITIONS
@@ -55,7 +53,7 @@ server_deaths			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compi
 server_maintainArea		=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_maintainArea.sqf";
 server_checkIfTowed		=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_checkIfTowed.sqf";
 server_handleSafeGear	=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_handleSafeGear.sqf";
-spawn_ammosupply		=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\spawn_ammosupply.sqf";
+//spawn_ammosupply		=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\spawn_ammosupply.sqf";
 spawn_mineveins			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\spawn_mineveins.sqf";
 spawn_roadblocks		=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\spawn_roadblocks.sqf";
 spawn_vehicles			=	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\spawn_vehicles.sqf";

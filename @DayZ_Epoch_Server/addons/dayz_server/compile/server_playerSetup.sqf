@@ -326,5 +326,4 @@ if (count _inventory > 2) then
 [_playerID,_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
 
 PVDZ_plr_Login1 = null;
-[_playerObj] spawn Ultima_Proc_Server_Admin_Data;	// Строка для сервера FireFly (WOG Epoch) (*/Scripts/Ultima_Admin/*). Если у вас Нет этого скрипта - Удалите строчку!
 PVDZ_plr_Login2 = null;

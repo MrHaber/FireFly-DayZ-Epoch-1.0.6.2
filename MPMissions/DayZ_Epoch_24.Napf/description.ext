@@ -92,5 +92,3 @@ class RscTitles {
 #include "Scripts\GUIMenu\HPP\menu.hpp"
 #include "Scripts\GUIMenu\HPP\rules.hpp"
 #include "Scripts\GUIMenu\HPP\update.hpp"
-
-#include "HPP\Ultima_Admins_Menu.hpp"
